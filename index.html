@@ -612,7 +612,9 @@ function renderHome(){
       const badge=l.label?l.label:(multiVol()?v._id+'·'+l.id:l.id);
       chips.push(`<button class="chip ${on?'on':''}" data-lk="${k}"><b>${badge}</b><span class="nm kr">${lessonName(l)}</span></button>`);}));
     const allOn=chips.every(c=>c.includes('chip on'));
-    lessonPanel=`<button class="panel-row lib-row" id="lessonsToggle"><span class="panel-label">Leçons <span class="lib-meta">${vocabN} mots</span></span><span class="lib-chev ${state.lessonsOpen?'open':''}">${I.chev}</span></button>${state.lessonsOpen?`<div class="lib-actions"><button class="chip-all" id="toggleAll">${allOn?'Tout désél.':'Tout sél.'}</button></div><div class="chips">${chips.join('')}</div>`:''}`;
+    const totLessons=av.reduce((s,v)=>s+v.lessons.length,0);
+    const selLessons=chips.filter(c=>c.includes('chip on')).length;
+    lessonPanel=`<button class="panel-row lib-row" id="lessonsToggle"><span class="panel-label">Leçons <span class="lib-meta">${selLessons}/${totLessons} · ${vocabN} mots</span></span><span class="lib-chev ${state.lessonsOpen?'open':''}">${I.chev}</span></button>${state.lessonsOpen?`<div class="lib-actions"><button class="chip-all" id="toggleAll">${allOn?'Tout désél.':'Tout sél.'}</button></div><div class="chips">${chips.join('')}</div>`:''}`;
   }
 
   const modes=av.length?`<div class="panel-row"><span class="panel-label">Réviser</span></div><div class="modes">
@@ -629,7 +631,7 @@ function renderHome(){
   $app.innerHTML=`
     <div class="home-hero"><div class="eyebrow">Révision de coréen</div><h2 class="kr">한국어</h2><button class="gear" id="settings">${I.gear}</button></div>
     ${STORAGE_OK?'':'<div class="banner">Aperçu : le stockage est désactivé ici, ta progression ne sera pas conservée. Ouvre l’appli depuis son URL pour qu’elle reste enregistrée.</div>'}
-    <button class="panel-row lib-row" id="libToggle"><span class="panel-label">Bibliothèque${LIB.length?` <span class="lib-meta">${LIB.length} volume${LIB.length>1?'s':''}</span>`:''}</span><span class="lib-chev ${state.libOpen?'open':''}">${I.chev}</span></button>
+    <button class="panel-row lib-row" id="libToggle"><span class="panel-label">Bibliothèque${LIB.length?` <span class="lib-meta">${av.length}/${LIB.length} volume${LIB.length>1?'s':''}</span>`:''}</span><span class="lib-chev ${state.libOpen?'open':''}">${I.chev}</span></button>
     ${libSection}${lessonPanel}${modes}
     <div class="foot">Hors-ligne · ajoute à l’écran d’accueil</div>`;
 
