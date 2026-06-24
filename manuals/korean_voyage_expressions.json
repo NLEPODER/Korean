@@ -12,7 +12,7 @@
   "lessons": [
     {
       "id": 1,
-      "title_kr": "표현과 문장 — Expressions et phrases utiles",
+      "title_kr": "표현과 문장",
       "vocabulary": [
         { "kr": "안녕하세요", "en": "Bonjour / Bonsoir (formel)", "example": "안녕하세요! 처음 뵙겠습니다." },
         { "kr": "안녕히 가세요", "en": "Au revoir (à celui qui part)", "example": "안녕히 가세요! 또 만나요." },
@@ -194,7 +194,7 @@
     },
     {
       "id": 2,
-      "title_kr": "단어 — Vocabulaire pur",
+      "title_kr": "단어",
       "vocabulary": [
         { "kr": "여권", "en": "Passeport", "example": "여권을 보여 주세요." },
         { "kr": "비자", "en": "Visa", "example": "비자가 필요해요?" },
@@ -306,7 +306,7 @@
     },
     {
       "id": 3,
-      "title_kr": "동사 — Verbes essentiels",
+      "title_kr": "동사",
       "vocabulary": [
         { "kr": "가다 → 가요 / 갔어요 / 갈 거예요", "en": "Aller", "example": "경복궁에 가요." },
         { "kr": "오다 → 와요 / 왔어요 / 올 거예요", "en": "Venir", "example": "친구가 와요." },
