@@ -1,6 +1,15 @@
 {
-  "generated": "2026-06-24T08:58:23.327Z",
+  "generated": "2026-06-24T09:15:24.116Z",
   "manuals": [
+    {
+      "file": "korean_voyage_expressions.json",
+      "level": "Débutant–Intermédiaire",
+      "name": "Débutant–Intermédiaire",
+      "source": "Manuel indépendant — Voyage & Expressions courantes",
+      "lessons": 3,
+      "vocab": 332,
+      "grammar": 8
+    },
     {
       "file": "sejong_korean_1A_data.json",
       "level": "1A",
