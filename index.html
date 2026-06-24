@@ -10,30 +10,39 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="복습">
 <link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap">
 <style>
   :root{
-    --bg1:#eef1ea;--bg2:#e4e9e1;
-    --card:#ffffff;--ink:#16241d;--muted:#74837a;--faint:#9aa79f;
-    --line:#dde3da;--line-soft:#e8ede5;
-    --green:#1e9e57;--green-deep:#0c5230;--green-mid:#157a44;--green-soft:#e6f2ea;
-    --coral:#dd5238;--coral-soft:#fae6e0;
-    --gold:#c08a32;
-    --r:18px;--r-lg:24px;
-    --sh-sm:0 1px 2px rgba(22,36,29,.05),0 1px 1px rgba(22,36,29,.04);
-    --sh-md:0 4px 14px -6px rgba(22,36,29,.16),0 2px 4px -2px rgba(22,36,29,.06);
-    --sh-card:0 22px 48px -26px rgba(12,82,48,.5),0 4px 12px -6px rgba(22,36,29,.12);
+    --bg1:#f4f1ff;--bg2:#ece6ff;
+    --card:#ffffff;--ink:#1d1340;--muted:#7c7398;--faint:#aaa3c6;
+    --line:#e8e2f8;--line-soft:#f0ecfc;
+    /* "green*" = couleur primaire (désormais violet vif) — re-thème toute l'app */
+    --green:#7c4dff;--green-deep:#4a1fc4;--green-mid:#6831ee;--green-soft:#ece2ff;
+    --coral:#ff4d8d;--coral-soft:#ffe2ed;
+    --gold:#ff9f1c;
+    /* accents ludiques multicolores */
+    --pink:#ff4d8d;--sky:#19b8fb;--amber:#ff9f1c;--lime:#28c76f;--grape:#7c4dff;
+    --r:20px;--r-lg:26px;
+    --sh-sm:0 2px 5px rgba(70,40,140,.07),0 1px 2px rgba(70,40,140,.05);
+    --sh-md:0 10px 24px -10px rgba(95,50,210,.30),0 3px 8px -4px rgba(70,40,140,.12);
+    --sh-card:0 28px 58px -22px rgba(95,50,210,.5),0 6px 16px -8px rgba(70,40,140,.18);
     --kr:"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","Nanum Gothic",sans-serif;
-    --ui:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,"Helvetica Neue",Arial,sans-serif;
+    --ui:"Fredoka",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,"Helvetica Neue",Arial,sans-serif;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0;padding:0}
   body{
     background:var(--bg1);
-    background-image:radial-gradient(120% 80% at 50% -10%, #f3f6f0 0%, var(--bg1) 45%, var(--bg2) 100%);
+    background-image:
+      radial-gradient(60% 42% at 10% 6%, rgba(255,77,141,.13), transparent 70%),
+      radial-gradient(58% 42% at 94% 3%, rgba(25,184,251,.13), transparent 70%),
+      radial-gradient(120% 80% at 50% -8%, #ffffff 0%, var(--bg1) 46%, var(--bg2) 100%);
     background-attachment:fixed;
     color:var(--ink);font-family:var(--ui);line-height:1.5;
     -webkit-font-smoothing:antialiased;overscroll-behavior-y:contain;
-    letter-spacing:-.005em;
+    letter-spacing:0;
   }
   .wrap{max-width:460px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
   button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
@@ -218,6 +227,27 @@
   .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(8px);background:var(--green-deep);color:#fff;font-size:13px;font-weight:650;padding:11px 18px;border-radius:13px;box-shadow:var(--sh-md);z-index:50;opacity:0;transition:opacity .25s ease,transform .25s ease;pointer-events:none;max-width:90vw;text-align:center}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
   .toast.err{background:var(--coral)}
+
+  /* ===== thème ludique & coloré ===== */
+  .home-hero h2{background:linear-gradient(110deg,var(--pink) 0%,var(--grape) 52%,var(--sky) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .eyebrow{color:var(--pink)}
+  /* boutons « 3D » : un rebord plein dessous qui s'enfonce au tap */
+  .start-btn,.empty-lib .cta{box-shadow:0 5px 0 var(--green-deep),var(--sh-md)}
+  .start-btn:active,.empty-lib .cta:active{transform:translateY(3px);box-shadow:0 2px 0 var(--green-deep),var(--sh-sm)}
+  /* cartes de mode : rebord coloré + bulle d'icône assortie */
+  .mode{box-shadow:0 5px 0 -1px var(--shelf,#e3dbf7),var(--sh-sm)}
+  .mode:active{transform:translateY(3px);box-shadow:0 2px 0 -1px var(--shelf,#e3dbf7),var(--sh-sm)}
+  .mode[data-go="flashSetup"]{--shelf:#d8c7ff}
+  .mode[data-go="flashSetup"] .ic{background:#ece2ff;color:#5b2be0}
+  .mode[data-go="quiz"]{--shelf:#ffc7dc}
+  .mode[data-go="quiz"] .ic{background:#ffe2ed;color:#cf205f}
+  .mode[data-go="cloze"]{--shelf:#bfe8fb}
+  .mode[data-go="cloze"] .ic{background:#ddf3ff;color:#0a83bb}
+  .mode[data-go="browse"]{--shelf:#ffe2ab}
+  .mode[data-go="browse"] .ic{background:#fff0d4;color:#b3700a}
+  /* sélection de leçon plus punchy */
+  .chip.on{transform:translateY(-1px)}
+  .chip:active{transform:scale(.92)}
 </style>
 </head>
 <body>
