@@ -201,8 +201,9 @@
   .vrow .x{font-family:var(--kr);font-size:13px;color:var(--muted);line-height:1.45;border-left:2px solid var(--line);padding-left:9px}
   .gram{padding:15px 16px;background:var(--green-soft)}
   .gram h4{margin:0 0 10px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--green-deep);font-weight:800}
-  .gram .gitem{margin-bottom:11px}
+  .gram .gitem{display:block;width:100%;text-align:left;background:none;margin-bottom:11px;padding:0}
   .gram .gitem:last-child{margin-bottom:0}
+  .gram .gitem:active{opacity:.6}
   .gram .gp{font-family:var(--kr);font-weight:800;font-size:16px}
   .gram .gm{font-size:12px;color:var(--muted);margin-top:1px}
 
@@ -283,6 +284,28 @@
   .gp-ex{font-family:var(--kr);font-size:15px;padding:10px 13px;background:var(--green-soft);color:var(--ink);border-radius:13px;margin-bottom:7px}
   .sheet-close{margin-top:22px;width:100%;padding:15px;border-radius:14px;background:var(--green-soft);color:var(--green-deep);font-weight:750;font-size:15px}
   .sheet-close:active{transform:scale(.99)}
+
+  /* ===== réglages, favoris & édition de cartes ===== */
+  .home-hero{position:relative}
+  .gear{position:absolute;top:24px;right:20px;width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:var(--card);box-shadow:var(--sh-sm);color:var(--muted)}
+  .gear:active{transform:scale(.94)}
+  .topbar .act{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:var(--card);box-shadow:var(--sh-sm);flex:none}
+  .topbar .act:active{transform:scale(.94)}
+  .ef{display:block;margin-top:14px}
+  .ef>span{display:block;font-size:11px;font-weight:800;color:var(--faint);letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}
+  .ef input,.ef textarea{width:100%;font-size:16px;padding:12px 13px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);resize:vertical;-webkit-appearance:none}
+  .ef input.kr,.ef textarea.kr{font-family:var(--kr)}
+  .ef input:focus,.ef textarea:focus{outline:none;border-color:var(--green)}
+  .ef-row{display:flex;gap:10px;margin-top:20px}
+  .ef-save{flex:1;padding:15px;border-radius:14px;background:linear-gradient(160deg,var(--green),var(--green-mid));color:#fff;font-weight:750;font-size:15px;box-shadow:var(--sh-md)}
+  .ef-save:active{transform:scale(.99)}
+  .ef-save:disabled{opacity:.6}
+  .ef-del{margin-top:16px;width:100%;text-align:center;font-size:13px;color:var(--coral);font-weight:700;background:none;padding:10px}
+  .vr-act{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+  .vr-act button{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:var(--faint);background:var(--line-soft);transition:transform .08s ease}
+  .vr-act button:active{transform:scale(.9)}
+  .vr-act .vr-fav.on{color:var(--gold);background:#fff5e0}
+  .vr-act .vr-del:active{background:var(--coral-soft);color:var(--coral)}
 </style>
 </head>
 <body>
@@ -304,7 +327,11 @@ const I={
   cloze:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h7"/><rect x="13" y="5.5" width="7" height="6" rx="1.5" stroke-dasharray="2.5 2.5"/><path d="M4 15h16"/></svg>',
   book:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H5.5A1.5 1.5 0 0 0 4 21.5z"/><path d="M4 18.5A1.5 1.5 0 0 1 5.5 17H20"/></svg>',
   chev:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>',
-  refresh:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>'
+  refresh:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>',
+  star:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6l2.95 6.2 6.55.85-4.85 4.6 1.25 6.55L12 18.7l-5.95 3.1 1.25-6.55L2.45 9.65 9 8.8z"/></svg>',
+  starOn:'<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6l2.95 6.2 6.55.85-4.85 4.6 1.25 6.55L12 18.7l-5.95 3.1 1.25-6.55L2.45 9.65 9 8.8z"/></svg>',
+  pencil:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>',
+  gear:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>'
 };
 
 /* ---------- storage ---------- */
@@ -323,12 +350,72 @@ function loadSRS(){if(!STORAGE_OK)return SMEM;try{return JSON.parse(localStorage
 function saveSRS(){if(!STORAGE_OK){SMEM=SRS;return;}try{localStorage.setItem(SRS_KEY,JSON.stringify(SRS));}catch(e){}}
 let SRS=loadSRS();
 const cardId=it=>it.volId+'|'+it.kr+'|'+it.en;
+
+/* favoris (clé stable par carte, survit aux syncs et aux éditions du dépôt) */
+function lsGet(k,def){if(!STORAGE_OK)return def;try{const v=JSON.parse(localStorage.getItem(k));return v==null?def:v;}catch(e){return def;}}
+function lsSet(k,v){if(!STORAGE_OK)return;try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+const FAV_KEY='sejong-fav-v1';
+let FAV=new Set(lsGet(FAV_KEY,[]));
+function saveFav(){lsSet(FAV_KEY,[...FAV]);}
+const cardUid=(volId,lid,n)=>volId+'#'+lid+'#'+n;
+
+/* référentiel de grammaire partagé (manuals/grammar.json), résolu par clé */
+const GRAM_KEY='sejong-grammar-v1';let GRAMMAR=new Map();
+function setGrammar(points){GRAMMAR=new Map((points||[]).map(p=>[p.key,p]));}
+setGrammar(lsGet(GRAM_KEY,{points:[]}).points);
+async function syncGrammar(){
+  try{const r=await fetch('./manuals/grammar.json',{cache:'no-store'});if(!r.ok)return;
+    const o=await r.json();if(Array.isArray(o.points)){setGrammar(o.points);lsSet(GRAM_KEY,o);}}catch(e){}
+}
+
+/* ---------- édition des cartes : commit direct dans le dépôt via l'API GitHub ---------- */
+const GH_REPO='NLEPODER/Korean',GH_BRANCH='main',GH_KEY='sejong-gh-v1';
+let GH_TOKEN=lsGet(GH_KEY,'');
+function saveToken(t){GH_TOKEN=t;lsSet(GH_KEY,t);}
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function b64encode(str){const b=new TextEncoder().encode(str);let bin='';const CH=0x8000;for(let i=0;i<b.length;i+=CH)bin+=String.fromCharCode.apply(null,b.subarray(i,i+CH));return btoa(bin);}
+function b64decode(b64){return new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\n/g,'')),c=>c.charCodeAt(0)));}
+async function ghGet(path){
+  const r=await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${path}?ref=${GH_BRANCH}`,
+    {headers:{Authorization:'Bearer '+GH_TOKEN,Accept:'application/vnd.github+json'},cache:'no-store'});
+  if(!r.ok)throw new Error('lecture '+r.status);
+  const j=await r.json();return{sha:j.sha,json:JSON.parse(b64decode(j.content))};
+}
+async function ghPut(path,obj,sha,message){
+  const body={message,content:b64encode(JSON.stringify(obj,null,2)+'\n'),sha,branch:GH_BRANCH};
+  const r=await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${path}`,
+    {method:'PUT',headers:{Authorization:'Bearer '+GH_TOKEN,Accept:'application/vnd.github+json','Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok){let m=r.status;try{m=(await r.json()).message||m;}catch(e){}throw new Error('commit '+m);}
+  return r.json();
+}
+/* applique une modif (patch) ou une suppression (del) sur lessons[].vocabulary[idx] */
+async function commitCard(vol,lid,idx,patch,del){
+  if(!GH_TOKEN){toast('Ajoute un token GitHub dans Réglages',true);openSettings();return false;}
+  if(!vol._file){toast('Resynchronise la bibliothèque puis réessaie',true);return false;}
+  const path='manuals/'+vol._file;let cur;
+  try{cur=await ghGet(path);}catch(e){toast('GitHub : '+e.message,true);return false;}
+  const lesson=(cur.json.lessons||[]).find(l=>l.id===lid);
+  if(!lesson||!Array.isArray(lesson.vocabulary)||idx>=lesson.vocabulary.length){toast('Carte introuvable dans le fichier',true);return false;}
+  if(del)lesson.vocabulary.splice(idx,1);else Object.assign(lesson.vocabulary[idx],patch);
+  try{await ghPut(path,cur.json,cur.sha,del?`Suppression carte (${vol._id} L${lid})`:`Modif carte (${vol._id} L${lid})`);}
+  catch(e){toast('GitHub : '+e.message,true);return false;}
+  // refléter localement tout de suite (avant le rebuild Pages)
+  const lv=vol.lessons.find(l=>l.id===lid);
+  if(lv&&Array.isArray(lv.vocabulary)){if(del)lv.vocabulary.splice(idx,1);else Object.assign(lv.vocabulary[idx],patch);saveLib();}
+  if(del){ // décaler les favoris du même lesson au-delà de l'index supprimé
+    const prefix=vol._id+'#'+lid+'#';
+    [...FAV].forEach(u=>{if(!u.startsWith(prefix))return;const n=+u.slice(prefix.length);if(n===idx)FAV.delete(u);else if(n>idx){FAV.delete(u);FAV.add(prefix+(n-1));}});
+    saveFav();
+  }
+  toast(del?'Carte supprimée · commit envoyé':'Carte modifiée · commit envoyé');
+  return true;
+}
 function sm2(c,q){c=c?{...c}:{ef:2.5,reps:0,interval:0};
   if(q<3){c.reps=0;c.interval=0;}else{if(c.reps===0)c.interval=1;else if(c.reps===1)c.interval=6;else c.interval=Math.round(c.interval*c.ef);c.reps++;}
   c.ef=Math.max(1.3,c.ef+(0.1-(5-q)*(0.08+(5-q)*0.02)));c.due=Date.now()+c.interval*86400000;return c;}
 function poolWithSrs(){return selectedVocab().map(it=>{const id=cardId(it);return{...it,cardId:id,srs:SRS[id]};});}
 
-const state={view:'home',activeVols:new Set(LIB.map(v=>v._id)),lessons:new Set(),flashCfg:{size:20,mode:'srs'},libOpen:false,lessonsOpen:false};
+const state={view:'home',activeVols:new Set(LIB.map(v=>v._id)),lessons:new Set(),flashCfg:{size:20,mode:'srs',favOnly:false},libOpen:false,lessonsOpen:false};
 const lessonKey=(volId,lid)=>volId+'#'+lid;
 function resetLessons(){state.lessons=new Set();LIB.forEach(v=>{if(state.activeVols.has(v._id))v.lessons.forEach(l=>state.lessons.add(lessonKey(v._id,l.id)));});}
 resetLessons();
@@ -373,7 +460,7 @@ async function syncManuals(){
     }catch(e){continue;}
     if(!validate(obj).ok)continue;
     obj._id=(obj.meta&&obj.meta.level)?String(obj.meta.level):(m.level||m.file);
-    obj._name=(obj.meta&&obj.meta.name)?String(obj.meta.name):obj._id;obj._src='repo';
+    obj._name=(obj.meta&&obj.meta.name)?String(obj.meta.name):obj._id;obj._src='repo';obj._file=m.file;
     if(!Array.isArray(obj.grammar))obj.grammar=[];
     wanted.add(obj._id);
     const i=LIB.findIndex(x=>x._id===obj._id);
@@ -386,6 +473,7 @@ async function syncManuals(){
 }
 async function runSync(manual){
   SYNC.status='syncing';if(state.view==='home')render();
+  await syncGrammar();
   const r=await syncManuals();
   SYNC.status=r.ok?'ok':'err';SYNC.generated=r.generated||SYNC.generated;
   if(r.ok){
@@ -408,24 +496,26 @@ function selectedVocab(){
   const out=[];
   LIB.forEach(v=>{if(!state.activeVols.has(v._id))return;
     v.lessons.forEach(l=>{if(!state.lessons.has(lessonKey(v._id,l.id)))return;
-      l.vocabulary.forEach(it=>out.push({...it,volId:v._id,level:v._name,lessonId:l.id,lessonTitle:l.title_kr||'',lessonLabel:l.label||'',gp:it.gp||null}));});});
+      l.vocabulary.forEach((it,n)=>{const uid=cardUid(v._id,l.id,n);
+        out.push({...it,uid,fav:FAV.has(uid),volId:v._id,level:v._name,lessonId:l.id,lessonTitle:l.title_kr||'',lessonLabel:l.label||'',gp:it.gp||null});});});});
   return out;
 }
 
 /* ---------- grammaire liée : règle d'une expression + feuille ---------- */
-function grammarById(volId,gid){const v=LIB.find(x=>x._id===volId);if(!v||!Array.isArray(v.grammar))return null;return v.grammar.find(g=>g.id===gid)||null;}
-function itemGrammar(item){return (item.gp||[]).map(id=>grammarById(item.volId,id)).filter(Boolean);}
+function grammarByKey(key){return GRAMMAR.get(key)||null;}
+function itemGrammar(item){return (item.gp||[]).map(k=>grammarByKey(k)).filter(Boolean);}
 function gpLinks(item,light){const gs=itemGrammar(item);if(!gs.length)return'';
-  return `<div class="gp-links">${gs.map(g=>`<button class="gp-link${light?' light':''}" data-gp="${g.id}" data-vol="${item.volId}">${I.book}<span class="kr">${g.pattern}</span></button>`).join('')}</div>`;}
-function wireGpLinks(scope){(scope||$app).querySelectorAll('[data-gp]').forEach(b=>b.onclick=ev=>{ev.stopPropagation();const g=grammarById(b.dataset.vol,+b.dataset.gp);if(g)openGrammar(g);});}
+  return `<div class="gp-links">${gs.map(g=>`<button class="gp-link${light?' light':''}" data-gp="${g.key}">${I.book}<span class="kr">${g.pattern}</span></button>`).join('')}</div>`;}
+function wireGpLinks(scope){(scope||$app).querySelectorAll('[data-gp]').forEach(b=>b.onclick=ev=>{ev.stopPropagation();const g=grammarByKey(b.dataset.gp);if(g)openGrammar(g);});}
 function openGrammar(g){
   const ex=(g.examples||[]).slice(0,4);
+  const meaning=g.meaning||g.meaning_en||'',form=g.form||g.form_en||'';
   const el=document.createElement('div');el.className='sheet-wrap';
   el.innerHTML=`<div class="sheet-bg"></div><div class="sheet">
     <div class="sheet-grip"></div>
     <div class="gp-pat">${g.pattern}</div>
-    ${g.meaning_en?`<div class="gp-mean">${g.meaning_en}</div>`:''}
-    ${g.form_en?`<div class="gp-sec"><div class="gp-h">Formation</div><div class="gp-form">${g.form_en}</div></div>`:''}
+    ${meaning?`<div class="gp-mean">${meaning}</div>`:''}
+    ${form?`<div class="gp-sec"><div class="gp-h">Formation</div><div class="gp-form">${form}</div></div>`:''}
     ${ex.length?`<div class="gp-sec"><div class="gp-h">Exemples</div>${ex.map(e=>`<div class="gp-ex">${e}</div>`).join('')}</div>`:''}
     <button class="sheet-close">Fermer</button>
   </div>`;
@@ -434,6 +524,43 @@ function openGrammar(g){
   const close=()=>{el.classList.remove('show');setTimeout(()=>el.remove(),300);};
   el.querySelector('.sheet-bg').onclick=close;el.querySelector('.sheet-close').onclick=close;
 }
+/* feuille d'édition d'une carte (commit GitHub) */
+function fixSiblingIdx(row,delIdx){const p=row.parentElement;row.remove();p.querySelectorAll('.vrow').forEach(r=>{const di=+r.dataset.idx;if(di>delIdx)r.dataset.idx=di-1;});}
+function updateBrowseRow(row,it){
+  row.querySelector('.k').textContent=it.kr;row.querySelector('.e').textContent=it.en;
+  let x=row.querySelector('.x');
+  if(it.example){if(!x){x=document.createElement('div');x.className='x kr';row.querySelector('.vr-h').after(x);}x.textContent=it.example;}
+  else if(x)x.remove();
+}
+function openEditCard(vol,lid,idx,it,row){
+  const el=document.createElement('div');el.className='sheet-wrap';
+  el.innerHTML=`<div class="sheet-bg"></div><div class="sheet">
+    <div class="sheet-grip"></div>
+    <div class="gp-h">Modifier la carte</div>
+    <label class="ef"><span>Coréen</span><input id="e-kr" class="kr" value="${esc(it.kr)}"></label>
+    <label class="ef"><span>Traduction</span><input id="e-en" value="${esc(it.en)}"></label>
+    <label class="ef"><span>Exemple</span><textarea id="e-ex" rows="2" class="kr">${esc(it.example||'')}</textarea></label>
+    <div class="ef-row"><button class="sheet-close" id="e-cancel" style="margin-top:0;flex:1">Annuler</button><button class="ef-save" id="e-save">Enregistrer</button></div>
+    <button class="ef-del" id="e-del">Supprimer la carte</button>
+  </div>`;
+  document.body.appendChild(el);requestAnimationFrame(()=>el.classList.add('show'));
+  const close=()=>{el.classList.remove('show');setTimeout(()=>el.remove(),300);};
+  el.querySelector('.sheet-bg').onclick=close;el.querySelector('#e-cancel').onclick=close;
+  el.querySelector('#e-save').onclick=async()=>{
+    const kr=el.querySelector('#e-kr').value.trim(),en=el.querySelector('#e-en').value.trim(),ex=el.querySelector('#e-ex').value.trim();
+    if(!kr||!en){toast('Coréen et traduction requis',true);return;}
+    const btn=el.querySelector('#e-save');btn.disabled=true;btn.textContent='Envoi…';
+    const ok=await commitCard(vol,lid,idx,{kr,en,example:ex},false);
+    btn.disabled=false;btn.textContent='Enregistrer';
+    if(ok){if(row)updateBrowseRow(row,{kr,en,example:ex});close();}
+  };
+  el.querySelector('#e-del').onclick=async()=>{
+    if(!confirm('Supprimer définitivement cette carte du dépôt ?'))return;
+    const btn=el.querySelector('#e-del');btn.disabled=true;btn.textContent='Suppression…';
+    const ok=await commitCard(vol,lid,idx,null,true);
+    if(ok){if(row)fixSiblingIdx(row,idx);close();}else{btn.disabled=false;btn.textContent='Supprimer la carte';}
+  };
+}
 function clozeParts(item){
   if(!item.example)return null;
   for(const w of item.kr.split('/').map(s=>s.trim())){const i=item.example.indexOf(w);if(i>=0)return{before:item.example.slice(0,i),word:w,after:item.example.slice(i+w.length)};}
@@ -441,7 +568,8 @@ function clozeParts(item){
 }
 
 /* ---------- dispatch ---------- */
-function render(){({home:renderHome,browse:renderBrowse,flashSetup:renderFlashSetup,flash:renderFlash,quiz:renderQuiz,cloze:renderCloze}[state.view])();}
+function render(){({home:renderHome,browse:renderBrowse,flashSetup:renderFlashSetup,flash:renderFlash,quiz:renderQuiz,cloze:renderCloze,settings:renderSettings}[state.view])();}
+function openSettings(){state.view='settings';render();}
 
 function renderHome(){
   const vocabN=selectedVocab().length;
@@ -484,12 +612,13 @@ function renderHome(){
   const showLib=state.libOpen||!LIB.length;
   const libSection=showLib?`${lib}${LIB.length?`<div class="lib-actions"><button class="imp-btn ${syncing?'busy':''}" id="sync"><span class="${syncing?'spin':''}">${I.refresh}</span> ${syncing?'…':'Rafraîchir'}</button></div>`:''}${syncLabel?`<div class="sync-note">${syncLabel}</div>`:''}`:'';
   $app.innerHTML=`
-    <div class="home-hero"><div class="eyebrow">Révision de coréen</div><h2 class="kr">한국어</h2></div>
+    <div class="home-hero"><div class="eyebrow">Révision de coréen</div><h2 class="kr">한국어</h2><button class="gear" id="settings">${I.gear}</button></div>
     ${STORAGE_OK?'':'<div class="banner">Aperçu : le stockage est désactivé ici, ta progression ne sera pas conservée. Ouvre l’appli depuis son URL pour qu’elle reste enregistrée.</div>'}
     <button class="panel-row lib-row" id="libToggle"><span class="panel-label">Bibliothèque${LIB.length?` <span class="lib-meta">${LIB.length} volume${LIB.length>1?'s':''}</span>`:''}</span><span class="lib-chev ${state.libOpen?'open':''}">${I.chev}</span></button>
     ${libSection}${lessonPanel}${modes}
     <div class="foot">Hors-ligne · ajoute à l’écran d’accueil</div>`;
 
+  const sg=$app.querySelector('#settings');if(sg)sg.onclick=openSettings;
   const lt=$app.querySelector('#libToggle');if(lt)lt.onclick=()=>{state.libOpen=!state.libOpen;render();};
   const lst=$app.querySelector('#lessonsToggle');if(lst)lst.onclick=()=>{state.lessonsOpen=!state.lessonsOpen;render();};
   const sync=$app.querySelector('#sync');if(sync)sync.onclick=()=>runSync(true);
@@ -515,14 +644,15 @@ function renderHome(){
   $app.querySelectorAll('[data-go]').forEach(b=>{if(!b.hasAttribute('disabled'))b.onclick=()=>{state.view=b.dataset.go;render();};});
 }
 
-const topbar=(t,s)=>`<div class="topbar"><button class="back" id="back">${I.back}</button><div><h1>${t}</h1><div class="sub">${s}</div></div></div>`;
+const topbar=(t,s,right)=>`<div class="topbar"><button class="back" id="back">${I.back}</button><div><h1>${t}</h1><div class="sub">${s}</div></div>${right||''}</div>`;
 function wireBack(){const b=$app.querySelector('#back');if(b)b.onclick=()=>{state.view='home';render();};}
 const lessonName=l=>{const t=(l.title_kr||'').trim();return t||('Leçon '+l.id);};
 const tag=item=>{const lbl=(item.lessonLabel||'').trim();const nm=(item.lessonTitle||'').trim();const base=lbl||(nm?nm.split(/\s[—–-]\s/)[0].trim():('Leçon '+item.lessonId));return multiVol()?item.level+' · '+base:base;};
 
 /* ---------- flashcards : setup + répétition espacée (SM-2) ---------- */
 function buildFlashDeck(size,mode){
-  const pool=poolWithSrs(),now=Date.now();let ordered;
+  let pool=poolWithSrs();if(state.flashCfg.favOnly)pool=pool.filter(p=>FAV.has(p.uid));
+  const now=Date.now();let ordered;
   if(mode==='srs'){
     const due=pool.filter(p=>p.srs&&p.srs.due<=now).sort((a,b)=>a.srs.due-b.srs.due);
     const fresh=shuffle(pool.filter(p=>!p.srs));
@@ -534,6 +664,7 @@ function buildFlashDeck(size,mode){
 function renderFlashSetup(){
   const pool=poolWithSrs(),now=Date.now();
   const due=pool.filter(p=>p.srs&&p.srs.due<=now).length, fresh=pool.filter(p=>!p.srs).length;
+  const favCount=pool.filter(p=>FAV.has(p.uid)).length;
   const cfg=state.flashCfg, sizes=[['10',10],['20',20],['50',50],['Tout','all']];
   $app.innerHTML=topbar('Flashcards','Configurer la session')+`
     <div class="setup">
@@ -547,12 +678,15 @@ function renderFlashSetup(){
       <div class="panel-row"><span class="panel-label">Méthode</span></div>
       <div class="seg"><button class="${cfg.mode==='srs'?'on':''}" data-mode="srs">Apprentissage</button><button class="${cfg.mode==='rand'?'on':''}" data-mode="rand">Aléatoire</button></div>
       <div class="cap">${cfg.mode==='srs'?'Les cartes reviennent plus ou moins vite selon ce que tu connais (répétition espacée).':'Tirage au hasard, sans planification.'}</div>
+      <div class="panel-row"><span class="panel-label">Cartes à inclure</span></div>
+      <div class="seg"><button class="${!cfg.favOnly?'on':''}" data-fav="0">Toutes</button><button class="${cfg.favOnly?'on':''}" data-fav="1">★ Favoris (${favCount})</button></div>
       <button class="start-btn" id="start">Commencer</button>
       <button class="reset-link" id="reset">Réinitialiser la progression de cette sélection</button>
     </div>`;
   wireBack();
   $app.querySelectorAll('[data-size]').forEach(b=>b.onclick=()=>{state.flashCfg.size=b.dataset.size==='all'?'all':+b.dataset.size;renderFlashSetup();});
   $app.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{state.flashCfg.mode=b.dataset.mode;renderFlashSetup();});
+  $app.querySelectorAll('[data-fav]').forEach(b=>b.onclick=()=>{state.flashCfg.favOnly=b.dataset.fav==='1';renderFlashSetup();});
   $app.querySelector('#start').onclick=startFlash;
   $app.querySelector('#reset').onclick=()=>{if(!confirm('Effacer la progression d’apprentissage des cartes sélectionnées ?'))return;poolWithSrs().forEach(p=>delete SRS[p.cardId]);saveSRS();renderFlashSetup();};
 }
@@ -568,7 +702,8 @@ function renderFlash(){
   const item=fQueue[0],id=item.cardId;
   if(fDirs[id]===undefined)fDirs[id]=Math.random()<.5?'kr':'en';
   const frontKr=fDirs[id]==='kr';
-  $app.innerHTML=topbar('Flashcards',tag(item))+`
+  const isFav=FAV.has(item.uid);
+  $app.innerHTML=topbar('Flashcards',tag(item),`<button class="act" id="fav" style="color:${isFav?'var(--gold)':'var(--faint)'}">${isFav?I.starOn:I.star}</button>`)+`
     <div class="rail"><i style="width:${fDone.size/fTotal*100}%"></i></div>
     <div class="count"><span>${fDone.size} / ${fTotal}</span><span class="sc">${fLapsed.size?('↻ '+fLapsed.size):''}</span></div>
     <div class="stage">
@@ -579,6 +714,7 @@ function renderFlash(){
       ${fFlip?`<div class="judge"><button class="b3 b-again" data-g="2">Encore</button><button class="b3 b-good" data-g="4">Bien</button><button class="b3 b-easy" data-g="5">Facile</button></div>`:`<div class="hint">Touche la carte pour la retourner</div>`}
     </div>`;
   wireBack();
+  const fb=$app.querySelector('#fav');if(fb)fb.onclick=()=>{if(FAV.has(item.uid))FAV.delete(item.uid);else FAV.add(item.uid);saveFav();renderFlash();};
   $app.querySelector('#flip').onclick=()=>{fFlip=!fFlip;renderFlash();};
   wireGpLinks();
   if(fFlip)$app.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{
@@ -661,22 +797,55 @@ function renderResult(score,total,again){
   wireBack();$app.querySelector('#home').onclick=()=>{state.view='home';render();};$app.querySelector('#again').onclick=again;
 }
 
+/* ---------- réglages (token GitHub) ---------- */
+function renderSettings(){
+  $app.innerHTML=topbar('Réglages','Édition des cartes')+`
+    <div class="setup">
+      <div class="cap">Pour modifier ou supprimer des cartes depuis le téléphone, l'appli enregistre la correction <b>directement dans le dépôt GitHub</b> via un token. Sans token, l'édition est désactivée.</div>
+      <div class="panel-row"><span class="panel-label">Token GitHub (fine-grained)</span></div>
+      <label class="ef"><input id="tok" type="password" autocomplete="off" placeholder="github_pat_…" value="${esc(GH_TOKEN)}"></label>
+      <div class="ef-row" style="margin-top:12px"><button class="sheet-close" id="tok-test" style="margin-top:0;flex:1">Tester</button><button class="ef-save" id="tok-save">Enregistrer</button></div>
+      <div class="cap" id="tok-status"></div>
+      <div class="cap">Dépôt : <b>${GH_REPO}</b> · branche <b>${GH_BRANCH}</b>.<br>
+      Crée le token sur github.com → <b>Settings → Developer settings → Fine-grained tokens</b>, limité au seul dépôt <b>Korean</b>, permission <b>Contents : Read and write</b>. Révocable à tout moment.</div>
+    </div>`;
+  wireBack();
+  $app.querySelector('#tok-save').onclick=()=>{saveToken($app.querySelector('#tok').value.trim());toast('Token enregistré');};
+  $app.querySelector('#tok-test').onclick=async()=>{
+    const t=$app.querySelector('#tok').value.trim();if(!t){toast('Colle d’abord un token',true);return;}
+    saveToken(t);const s=$app.querySelector('#tok-status');s.style.color='var(--muted)';s.textContent='Test en cours…';
+    try{await ghGet('manuals/manifest.json');s.textContent='✓ Connexion OK';s.style.color='var(--green-deep)';}
+    catch(e){s.textContent='✗ '+e.message;s.style.color='var(--coral)';}
+  };
+}
+
 /* ---------- browse ---------- */
 function renderBrowse(){
   const vols=LIB.filter(v=>state.activeVols.has(v._id));let cards='';
   vols.forEach(v=>v.lessons.forEach(l=>{
-    const gram=(v.grammar||[]).filter(g=>g.lesson===l.id);
+    const gram=(v.grammar||[]).filter(r=>r.lesson===l.id).map(r=>grammarByKey(r.key)).filter(Boolean);
     cards+=`<div class="lesson-card"><button class="lesson-head">
       <span class="no">${l.label?l.label:(multiVol()?v._id+'·'+l.id:l.id)}</span>
       <span class="ti"><span class="t kr">${l.title_kr||('Leçon '+l.id)}</span><span class="m">${l.vocabulary.length} mots · ${gram.length} grammaire</span></span>
       <span class="ar">${I.chev}</span></button>
       <div class="lesson-body">
-        ${l.vocabulary.map(it=>`<div class="vrow"><div class="vr-h"><span class="k">${it.kr}</span><span class="e">${it.en}</span></div>${it.example?`<div class="x">${it.example}</div>`:''}${gpLinks({volId:v._id,gp:it.gp},true)}</div>`).join('')}
-        ${gram.length?`<div class="gram"><h4>Grammaire</h4>${gram.map(g=>`<div class="gitem"><div class="gp">${g.pattern}</div><div class="gm">${g.meaning_en||''}</div></div>`).join('')}</div>`:''}
+        ${l.vocabulary.map((it,n)=>{const uid=cardUid(v._id,l.id,n);return `<div class="vrow" data-vol="${v._id}" data-lid="${l.id}" data-idx="${n}"><div class="vr-h"><span class="k">${it.kr}</span><span class="e">${it.en}</span></div>${it.example?`<div class="x kr">${it.example}</div>`:''}${gpLinks({volId:v._id,gp:it.gp},true)}<div class="vr-act"><button class="vr-fav${FAV.has(uid)?' on':''}">${FAV.has(uid)?I.starOn:I.star}</button><button class="vr-edit">${I.pencil}</button><button class="vr-del">${I.trash}</button></div></div>`;}).join('')}
+        ${gram.length?`<div class="gram"><h4>Grammaire</h4>${gram.map(g=>`<button class="gitem" data-gp="${g.key}"><div class="gp">${g.pattern}</div><div class="gm">${g.meaning||g.meaning_en||''}</div></button>`).join('')}</div>`:''}
       </div></div>`;
   }));
   $app.innerHTML=topbar('Parcourir',vols.length+' volume'+(vols.length>1?'s':''))+`<div class="browse">${cards||'<div class="empty">Aucun volume sélectionné.</div>'}</div>`;
   wireBack();wireGpLinks();$app.querySelectorAll('.lesson-card').forEach(c=>c.querySelector('.lesson-head').onclick=()=>c.classList.toggle('open'));
+  const volOf=row=>LIB.find(x=>x._id===row.dataset.vol);
+  $app.querySelectorAll('.vr-fav').forEach(b=>b.onclick=ev=>{ev.stopPropagation();
+    const row=b.closest('.vrow'),uid=cardUid(row.dataset.vol,+row.dataset.lid,+row.dataset.idx);
+    if(FAV.has(uid))FAV.delete(uid);else FAV.add(uid);saveFav();b.classList.toggle('on');b.innerHTML=FAV.has(uid)?I.starOn:I.star;});
+  $app.querySelectorAll('.vr-edit').forEach(b=>b.onclick=ev=>{ev.stopPropagation();
+    const row=b.closest('.vrow'),vol=volOf(row),lid=+row.dataset.lid,idx=+row.dataset.idx;
+    const it=vol.lessons.find(l=>l.id===lid).vocabulary[idx];openEditCard(vol,lid,idx,it,row);});
+  $app.querySelectorAll('.vr-del').forEach(b=>b.onclick=async ev=>{ev.stopPropagation();
+    const row=b.closest('.vrow'),vol=volOf(row),lid=+row.dataset.lid,idx=+row.dataset.idx;
+    if(!confirm('Supprimer définitivement cette carte du dépôt ?'))return;
+    const ok=await commitCard(vol,lid,idx,null,true);if(ok)fixSiblingIdx(row,idx);});
 }
 
 render();              // rendu immédiat depuis le cache local

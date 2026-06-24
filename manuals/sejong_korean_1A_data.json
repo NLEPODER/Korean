@@ -481,185 +481,25 @@
     }
   ],
   "grammar": [
-    {
-      "id": 1,
-      "lesson": 1,
-      "pattern": "이에요/예요",
-      "meaning_en": "'이에요/예요' attaches to the end of a noun, such as people or things, describing the noun (copula 'to be').",
-      "form_en": "'이에요' is used when a noun ends with a consonant, and '예요' is used when a noun ends with a vowel.",
-      "examples": ["학생이에요.", "미국 사람이에요.", "선생님이에요.", "책이에요.", "한복이에요.", "의사예요.", "친구예요.", "커피예요.", "김치예요."],
-      "practice": ["가: 회사원이에요? / 나: 네. 회사원이에요.", "가: 모자예요? / 나: 네. 모자예요."]
-    },
-    {
-      "id": 2,
-      "lesson": 1,
-      "pattern": "은/는",
-      "meaning_en": "'은/는' attaches to the end of a noun, indicating that the noun is the topic of the sentence.",
-      "form_en": "'은' is used when a noun ends with a consonant, and '는' is used when a noun ends with a vowel.",
-      "examples": ["이 사람은 일본 사람이에요.", "이 사람은 마리 씨예요.", "저 사람은 회사원이에요.", "동생은 가수예요.", "저는 한국 사람이에요.", "저는 경찰이에요.", "유진 씨는 제 친구예요.", "웨이 씨는 요리사예요."],
-      "practice": ["가: 유진 씨 동생은 대학생이에요? / 나: 네. 제 동생은 대학생이에요.", "가: 아버지는 요리사예요? / 나: 네. 아버지는 요리사예요."]
-    },
-    {
-      "id": 3,
-      "lesson": 2,
-      "pattern": "이/가",
-      "meaning_en": "'이/가' attaches to a noun, indicating that the noun is the subject of the sentence.",
-      "form_en": "'이' is used when a noun ends with a consonant, and '가' is used when a noun ends with a vowel.",
-      "examples": ["주노 씨 동생이 누구예요?", "노래방이 어디예요?", "영화관이 어디예요?", "식당이 어디예요?", "교실이 203호예요?", "안나 씨가 누구예요?", "제가 안나예요.", "마리 씨 친구가 누구예요?", "요리사가 누구예요?", "제가 요리사예요."],
-      "practice": ["가: 이름이 뭐예요? / 나: 마리예요.", "가: 전화번호가 뭐예요? / 나: 010-1213-7505예요."]
-    },
-    {
-      "id": 4,
-      "lesson": 2,
-      "pattern": "이/가 아니에요",
-      "meaning_en": "'이/가 아니에요' attaches to a noun, indicating that the noun is negated ('is not').",
-      "form_en": "'이 아니에요' is used when a noun ends with a consonant, and '가 아니에요' is used when a noun ends with a vowel.",
-      "examples": ["선생님이 아니에요.", "8층이 아니에요.", "학생이 아니에요. 회사원이에요.", "물이 아니에요. 주스예요.", "9121이 아니에요. 9122예요.", "남자 친구가 아니에요.", "컴퓨터가 아니에요.", "친구가 아니에요. 언니예요.", "요리사가 아니에요. 선생님이에요.", "7565가 아니에요. 7505예요."],
-      "practice": ["가: 동생이에요? / 나: 아니요. 동생이 아니에요. 형이에요.", "가: 교실이 203호예요? / 나: 아니요. 203호가 아니에요. 204호예요."]
-    },
-    {
-      "id": 5,
-      "lesson": 3,
-      "pattern": "이, 그, 저",
-      "meaning_en": "'이, 그, 저' comes before a noun to point to people or things. '이' is used when a person or a thing is close to the speaker, '저' when it is far from the speaker, and '그' when it is close to the listener.",
-      "form_en": "Placed before the noun (demonstratives: this / that / that over there).",
-      "examples": ["이 시계는 누구 시계예요?", "이 시계는 유진 씨 시계예요.", "이 필통은 제 필통이에요.", "그 모자는 누구 모자예요?", "그 사람은 누구예요?", "그 사람은 마리 씨예요.", "저 가방은 누구 가방이에요?", "저 사람은 누구예요?", "저 책은 유진 씨 책이에요."],
-      "practice": ["가: 이 사람은 누구예요? / 나: 제 동생이에요.", "가: 저 핸드폰은 주노 씨 핸드폰이에요? / 나: 네. 주노 씨 핸드폰이에요."]
-    },
-    {
-      "id": 6,
-      "lesson": 3,
-      "pattern": "에 있다, 없다",
-      "meaning_en": "'에 있다, 없다' attaches to the end of a noun, indicating the location of people or things (to exist / not exist at a place).",
-      "form_en": "'에 있다, 없다' is used regardless of whether a noun ends with a consonant or not.",
-      "examples": ["칠판이 어디에 있어요?", "칠판이 교실에 있어요.", "컴퓨터가 책상 위에 있어요.", "주노 씨가 칠판 앞에 있어요.", "제 펜은 필통 안에 있어요.", "피아노가 교실에 없어요.", "가방이 교실에 없어요.", "유진 씨가 집에 없어요.", "제 방에 컴퓨터가 없어요.", "제 우산은 의자 옆에 없어요."],
-      "practice": ["가: 책이 어디에 있어요? / 나: 책상 위에 있어요.", "가: 수지 씨가 집에 있어요? / 나: 아니요. 집에 없어요. 학교에 있어요."]
-    },
-    {
-      "id": 7,
-      "lesson": 4,
-      "pattern": "-아요/어요",
-      "meaning_en": "'-아요/어요' is combined with a verb or an adjective, describing an action or a state (polite present tense).",
-      "form_en": "'-아요' is used when the final vowel of a verb stem or an adjective stem is 'ㅏ' or 'ㅗ', otherwise '-어요' is used. '하다' is changed to '해요'.",
-      "examples": ["지금 무엇을 해요?", "텔레비전을 봐요.", "동생이 자요.", "책을 읽어요.", "음악을 들어요.", "불고기를 먹어요.", "커피를 마셔요.", "요리해요.", "한국어를 공부해요.", "게임을 좋아해요."],
-      "practice": ["가: 주노 씨는 오늘 무엇을 해요? / 나: 오늘 친구를 만나요.", "가: 유진 씨, 불고기 맛있어요? / 나: 네. 정말 맛있어요."]
-    },
-    {
-      "id": 8,
-      "lesson": 4,
-      "pattern": "을/를",
-      "meaning_en": "'을/를' attaches to the end of a noun, indicating that the noun is the object of the sentence.",
-      "form_en": "'을' is used when a noun ends with a consonant, and '를' is used when a noun ends with a vowel.",
-      "examples": ["게임을 해요.", "운동을 해요.", "꽃을 좋아해요.", "쇼핑을 해요.", "음악을 들어요.", "한국어를 공부해요.", "영화를 봐요.", "피자를 먹어요.", "고양이를 좋아해요.", "친구를 만나요."],
-      "practice": ["가: 오늘 무엇을 해요? / 나: 책을 읽어요.", "가: 안나 씨는 한국 영화를 좋아해요? / 나: 네. 저는 한국 영화를 좋아해요."]
-    },
-    {
-      "id": 9,
-      "lesson": 5,
-      "pattern": "에 가다",
-      "meaning_en": "'에 가다' attaches to the end of a noun, expressing its direction or movement towards a destination (to go to).",
-      "form_en": "'에 가다' is used regardless of whether a noun ends with a consonant or not.",
-      "examples": ["주노 씨는 어디에 가요?", "식당에 가요.", "집에 가요.", "세종학당에 가요.", "마트에 가요.", "마리 씨는 백화점에 가요.", "수지 씨는 공원에 가요.", "유진 씨는 식당에 가요.", "재민 씨는 카페에 가요.", "주노 씨는 회사에 가요."],
-      "practice": ["가: 마리 씨, 어디에 가요? / 나: 영화관에 가요.", "가: 재민 씨, 집에 가요? / 나: 아니요. 백화점에 가요."]
-    },
-    {
-      "id": 10,
-      "lesson": 5,
-      "pattern": "하고",
-      "meaning_en": "'하고' attaches to the end of a noun, connecting the noun and the following noun ('and'). '와/과' can be used instead of '하고'.",
-      "form_en": "'하고' is used regardless of whether a noun ends with a consonant or not. ('와' after vowel, '과' after consonant for the formal equivalent.)",
-      "examples": ["영화관하고 카페에 가요.", "선생님하고 수지 씨를 만나요.", "빵하고 우유를 사요.", "라면하고 김밥을 먹어요.", "유진 씨는 화장품하고 가방을 사요.", "시계하고 칠판이 있어요.", "유진 씨하고 안나 씨가 있어요.", "케이크와 빵을 먹어요.", "우유와 차를 마셔요.", "신발과 옷을 사요."],
-      "practice": ["가: 뭘 사요? / 나: 가방하고 구두를 사요.", "가: 교실에 누가 있어요? / 나: 선생님하고 안나 씨가 있어요."]
-    },
-    {
-      "id": 11,
-      "lesson": 6,
-      "pattern": "단위 명사",
-      "meaning_en": "'개, 명, 마리' are unit nouns (counters) used when counting things, people, or animals.",
-      "form_en": "The appropriate counting words should be used depending on the type of a noun (개 things, 명 people, 마리 animals, 잔 cups, 병 bottles, 권 books, 장 sheets, 살 age).",
-      "examples": ["책상이 몇 개 있어요?", "책상이 한 개 있어요.", "의자가 다섯 개 있어요.", "시계가 한 개 있어요.", "창문이 두 개 있어요.", "필통이 한 개 있어요.", "여덟 살이에요.", "주스가 네 잔 있어요.", "책이 두 권 있어요.", "고양이가 세 마리 있어요.", "물이 한 병 있어요."],
-      "practice": ["가: 뭘 사요? / 나: 빵을 한 개 사요.", "가: 학생이 몇 명 있어요? / 나: 두 명 있어요."]
-    },
-    {
-      "id": 12,
-      "lesson": 6,
-      "pattern": "-(으)세요",
-      "meaning_en": "'-(으)세요' is combined with a verb, indicating order or request (polite imperative).",
-      "form_en": "'-으세요' is used when a verb stem ends with a consonant, and '-세요' is used when a verb stem ends with a vowel. When a verb stem ends with 'ㄹ', the final consonant 'ㄹ' is dropped and then '-세요' is used.",
-      "examples": ["책을 읽으세요.", "답을 쓰세요.", "질문에 대답하세요.", "다음 대화를 완성하세요.", "알맞은 것을 연결하세요.", "커피 한 잔 주세요.", "내일 일찍 오세요.", "8번 버스를 타세요.", "어서 오세요.", "아이스크림 한 개 주세요."],
-      "practice": ["가: 안나 씨, 여기 앉으세요. / 나: 네. 고마워요.", "가: 라면 세 개 주세요. / 나: 여기 있어요."]
-    },
-    {
-      "id": 13,
-      "lesson": 7,
-      "pattern": "에 (temps)",
-      "meaning_en": "'에' attaches to a noun, indicating the time when a certain action occurs.",
-      "form_en": "'에' is used regardless of whether a noun ends with a consonant or not. '에' doesn't attach to 오늘(today), 내일(tomorrow), 어제(yesterday), 언제(when), 지금(now), 매일(everyday), 요즘(recently). '에' cannot be used in front of '이에요/예요'.",
-      "examples": ["월요일에 뭐 해요?", "화요일에 뭐 해요?", "수요일에 영화를 봐요.", "목요일에 세종학당에 가요.", "금요일에 수영을 해요.", "오늘 점심에 친구를 만나요.", "오늘 오후에 아르바이트를 해요.", "팔월 오일에 여행을 가요.", "시월 십삼일에 친구를 만나요."],
-      "practice": ["가: 언제 유진 씨를 만나요? / 나: 주말에 만나요.", "가: 수요일에 한국어 수업이 있어요? / 나: 네. 있어요."]
-    },
-    {
-      "id": 14,
-      "lesson": 7,
-      "pattern": "○시 ○분",
-      "meaning_en": "'○시 ○분' is used to express the time (hours and minutes).",
-      "form_en": "Native Korean numbers (한, 두, 세…) are used in front of '시', and Sino-Korean numbers (일, 이, 삼…) are used in front of '분'.",
-      "examples": ["아침 일곱 시 삼십 분에 일어나요.", "여덟 시 삼십 분에 학교에 가요.", "아홉 시 삼십 분에 수업이 있어요.", "열두 시 삼십 분에 점심을 먹어요.", "오후 세 시에 친구를 만나요.", "오후 네 시에 요리를 배워요.", "저녁 여섯 시에 친구 생일 파티에 가요.", "저녁 여덟 시에 운동을 해요."],
-      "practice": ["가: 지금 몇 시예요? / 나: 일곱 시 삼십 분이에요.", "가: 언제 점심을 먹어요? / 나: 열두 시에 점심을 먹어요."]
-    },
-    {
-      "id": 15,
-      "lesson": 8,
-      "pattern": "안",
-      "meaning_en": "'안' comes before a verb or an adjective, expressing negation or opposite meaning.",
-      "form_en": "'안' is used in front of a verb or an adjective. The verb in the form of a 'noun'+'하다' can be used in the form of a 'noun'+'안 하다'. It cannot be combined with '있다' or '없다'.",
-      "examples": ["오늘 안 바빠요.", "오늘 영화를 안 봐요.", "오늘 친구를 안 만나요.", "주말에 공원에 안 가요.", "내일 일 안 해요.", "여름을 안 좋아해요.", "바나나를 안 좋아해요.", "딸기를 안 사요.", "날씨가 안 좋아요.", "커피를 안 마셔요."],
-      "practice": ["가: 서울은 날씨가 좋아요? / 나: 아니요. 안 좋아요. 비가 와요.", "가: 오늘 운동해요? / 나: 아니요. 운동 안 해요."]
-    },
-    {
-      "id": 16,
-      "lesson": 8,
-      "pattern": "ㅂ 불규칙",
-      "meaning_en": "When a verb stem or an adjective stem ending with 'ㅂ' is followed by a vowel, 'ㅂ' is changed to '우'. However, not all verbs and adjectives that end in 'ㅂ' are irregular.",
-      "form_en": "When adjectives such as 덥다(hot), 춥다(cold), 맵다(spicy), 무겁다(heavy), 가볍다(light), 쉽다(easy), 어렵다(difficult) are followed by a vowel, 'ㅂ' is changed to '우'. '우' is combined with '-어요' and becomes '워요'. However, 입다, 좁다, 잡다, which are not ㅂ irregular verbs, do not follow this rule.",
-      "examples": ["요즘 날씨가 더워요.", "한국은 겨울 날씨가 추워요.", "공부가 쉬워요.", "책이 어려워요.", "요리가 어려워요.", "김치가 매워요.", "가방이 무거워요.", "가방이 가벼워요.", "가을이 아름다워요."],
-      "practice": ["가: 날씨가 어때요? / 나: 좀 추워요.", "가: 가방이 무거워요? / 나: 아니요. 가벼워요."]
-    },
-    {
-      "id": 17,
-      "lesson": 9,
-      "pattern": "에서",
-      "meaning_en": "'에서' attaches to the end of a noun, indicating where an action occurs.",
-      "form_en": "'에서' is used regardless of whether a noun ends with a consonant or not.",
-      "examples": ["주말에 공원에서 뭐 해요?", "공원에서 산책해요.", "영화관에서 영화를 봐요.", "백화점에서 쇼핑을 해요.", "카페에서 친구를 만나요.", "집에서 텔레비전을 봐요.", "수영장에서 수영해요."],
-      "practice": ["가: 주노 씨, 지금 뭐 해요? / 나: 집에서 청소해요.", "가: 마리 씨는 지금 어디에 있어요? / 나: 회사에서 일해요."]
-    },
-    {
-      "id": 18,
-      "lesson": 9,
-      "pattern": "-았/었-",
-      "meaning_en": "'-았/었-' is combined with a verb or an adjective, describing an action or a state in the past.",
-      "form_en": "'-았-' is used when the final vowel of a verb stem or an adjective stem is 'ㅏ' or 'ㅗ', otherwise '-었-' is used. '하다' is changed to '했'.",
-      "examples": ["집에서 영화를 봤어요.", "토요일에 친구를 만났어요.", "식당에서 불고기를 먹었어요.", "도서관에서 책을 읽었어요.", "집에서 쉬었어요.", "아주 재미있었어요.", "우유를 마셨어요.", "날씨가 더웠어요.", "박물관에서 구경했어요.", "친구하고 등산했어요."],
-      "practice": ["가: 토요일에 뭐 했어요? / 나: 도서관에서 책을 읽었어요.", "가: 어제 날씨가 어땠어요? / 나: 아주 좋았어요."]
-    },
-    {
-      "id": 19,
-      "lesson": 10,
-      "pattern": "-고 싶다",
-      "meaning_en": "'-고 싶다' is combined with a verb, indicating what a speaker wants. '-고 싶어 하다' is used when the subject of a sentence is a 3rd person.",
-      "form_en": "'-고 싶다' is used regardless of whether a verb ends with a consonant or not. When the subject is another person, use '-고 싶어 하다'.",
-      "examples": ["저녁에 뭘 먹고 싶어요?", "한국에 가고 싶어요.", "사진을 찍고 싶어요.", "친구를 만나고 싶어요.", "커피를 마시고 싶어요.", "안나 씨는 어디에 가고 싶어 해요?", "동생은 집에서 놀고 싶어 해요.", "재민 씨는 낚시를 하고 싶어 해요.", "수지 씨는 운동화를 사고 싶어 해요.", "유진 씨는 공원에서 걷고 싶어 해요."],
-      "practice": ["가: 저녁에 뭘 먹고 싶어요? / 나: 한국 음식을 먹고 싶어요.", "가: 안나 씨는 어디에 가고 싶어 해요? / 나: 안나 씨는 제주도에 가고 싶어 해요."]
-    },
-    {
-      "id": 20,
-      "lesson": 10,
-      "pattern": "-(으)ㄹ까요?",
-      "meaning_en": "'-(으)ㄹ까요?' is combined with a verb, asking the listener's opinion about a particular action ('shall we...?').",
-      "form_en": "'-을까요?' is used when a verb ends with a consonant, and '-ㄹ까요?' is used when a verb ends with a vowel. '-까요?' is used with a verb that ends with 'ㄹ'.",
-      "examples": ["여기에 앉을까요?", "같이 저녁을 먹을까요?", "여기에서 사진을 찍을까요?", "오후에 노래방에 갈까요?", "내일 같이 영화를 볼까요?", "놀이공원 앞에서 만날까요?", "도서관에서 같이 공부할까요?", "주말에 같이 자전거를 탈까요?", "같이 음악을 들을까요?", "내일 같이 놀까요?"],
-      "practice": ["가: 여기에서 사진을 찍을까요? / 나: 네. 그래요.", "가: 주말에 같이 자전거를 탈까요? / 나: 네. 좋아요."]
-    }
+    { "key": "g1", "lesson": 1 },
+    { "key": "g2", "lesson": 1 },
+    { "key": "g3", "lesson": 2 },
+    { "key": "g4", "lesson": 2 },
+    { "key": "g5", "lesson": 3 },
+    { "key": "g6", "lesson": 3 },
+    { "key": "g7", "lesson": 4 },
+    { "key": "g8", "lesson": 4 },
+    { "key": "g9", "lesson": 5 },
+    { "key": "g10", "lesson": 5 },
+    { "key": "g11", "lesson": 6 },
+    { "key": "g12", "lesson": 6 },
+    { "key": "g13", "lesson": 7 },
+    { "key": "g14", "lesson": 7 },
+    { "key": "g15", "lesson": 8 },
+    { "key": "g16", "lesson": 8 },
+    { "key": "g17", "lesson": 9 },
+    { "key": "g18", "lesson": 9 },
+    { "key": "g19", "lesson": 10 },
+    { "key": "g20", "lesson": 10 }
   ]
 }

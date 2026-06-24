@@ -4,7 +4,9 @@ Procédure pour transformer un PDF du manuel *Sejong Korean — Vocabulary & Gra
 
 ---
 
-## 1. Le format cible
+> **Deux formats à ne pas confondre.** L'**extraction** produit toujours un fichier volume avec un `grammar[]` *complet* (objets détaillés, ci-dessous). Une fois le fichier en place, on lance l'étape de **consolidation** (§7) : elle déplace la grammaire dans un référentiel partagé `manuals/grammar.json` et remplace, dans chaque volume, `grammar[]` par de simples **références** `{ "key", "lesson" }`. C'est ce format consolidé qui est servi au site. Tu extrais en format complet ; le script fait le reste.
+
+## 1. Le format cible (sortie d'extraction)
 
 Chaque volume donne un seul fichier JSON avec trois blocs : `meta`, `lessons`, `grammar`.
 
@@ -104,6 +106,8 @@ Astuce : le pied de page de chaque fiche de grammaire indique la page du *Studen
 
 ## 4. Contrôles de qualité avant livraison
 
+> Ces contrôles portent sur le **fichier extrait au format complet** (avant la consolidation du §7, où `grammar[]` devient des références).
+
 Petit script à lancer pour valider la structure et compter les entrées :
 
 ```python
@@ -167,3 +171,61 @@ Penser à mettre à jour `meta.level` et `meta.source` à chaque volume.
 | 2A     | *à mesurer*                  | *à voir*  | |
 
 > Compléter ce tableau à chaque nouvelle extraction : c'est ce qui fait gagner le plus de temps la fois suivante.
+
+---
+
+## 7. Consolidation de la grammaire (`grammar.json`)
+
+Depuis l'introduction du référentiel partagé, la grammaire n'est **plus stockée dans chaque volume** mais dans un seul fichier `manuals/grammar.json` (clés stables `g1`, `g2`, …, champs `pattern / meaning / form / level / examples`). Chaque volume ne garde que des **références** :
+
+```json
+"grammar": [
+  { "key": "g1", "lesson": 1 },
+  { "key": "g2", "lesson": 1 }
+]
+```
+
+### Pourquoi
+- Un même point de grammaire revient d'un volume à l'autre → une seule fiche, dédupliquée.
+- Le site résout les clés à l'affichage (pop-up de règle, onglet « Parcourir »).
+- Les expressions liées à une règle utilisent `vocabulary[].gp: ["g64"]` (tableau de **clés**, pas d'ids numériques).
+
+### Procédure (après chaque nouvelle extraction)
+1. Extraire le volume **en format complet** (§1) — le `grammar[]` contient les objets détaillés.
+2. Régénérer le manifeste : `node scripts/build-manifest.mjs` (il ignore `grammar.json`).
+3. Lancer la consolidation :
+   ```bash
+   node scripts/migrate-grammar.mjs
+   ```
+   Le script est **idempotent et ré-exécutable** :
+   - il réutilise les clés déjà présentes dans `grammar.json` (aucune réattribution) ;
+   - il ingère les objets complets du nouveau volume (création ou fusion sur `pattern` normalisé) ;
+   - il préserve les volumes déjà en références ;
+   - il réécrit le `grammar[]` de chaque volume en références **sans toucher au vocabulaire** (formatage et `gp` préservés).
+
+### Contrôle après consolidation
+```bash
+node -e '
+const fs=require("fs");
+const keys=new Set(JSON.parse(fs.readFileSync("manuals/grammar.json","utf8")).points.map(p=>p.key));
+let bad=0;
+for(const m of JSON.parse(fs.readFileSync("manuals/manifest.json","utf8")).manuals){
+  const d=JSON.parse(fs.readFileSync("manuals/"+m.file,"utf8"));
+  for(const r of d.grammar||[]) if(!keys.has(r.key)) bad++;
+  for(const l of d.lessons||[]) for(const v of l.vocabulary||[]) for(const k of v.gp||[]) if(!keys.has(k)) bad++;
+}
+console.log(bad? "❌ "+bad+" références cassées" : "✓ références grammaire/gp valides");'
+```
+
+> Les `gp` (liens expression → règle) sont saisis à la main, **en clés** (`["g64"]`). Si un nouveau volume fournit des liens vers ses propres ids numériques, les remapper en clés avant consolidation.
+
+---
+
+## 8. Corriger une carte après coup
+
+Deux façons, au choix :
+
+- **Depuis le téléphone (in-app).** Écran *Parcourir* → ✏️ pour modifier, 🗑 pour supprimer. L'appli **commite directement** le fichier `manuals/<volume>.json` dans le dépôt via l'API GitHub (token à renseigner une fois dans *Réglages* — un *fine-grained token* limité au dépôt `NLEPODER/Korean`, permission *Contents: Read and write*). GitHub Pages se reconstruit et tous les appareils voient la correction au sync suivant.
+- **Directement dans le JSON.** Éditer la ligne `{ "kr": …, "en": …, "example": … }` dans le bon volume, puis commit. Re-passer le contrôle qualité (§4) avant de pousser.
+
+Dans les deux cas, c'est bien le **fichier du dépôt** qui est modifié — la source de vérité reste unique.

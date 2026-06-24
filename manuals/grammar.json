@@ -1,0 +1,1047 @@
+{
+  "generated": "2026-06-24T15:20:37.711Z",
+  "points": [
+    {
+      "key": "g1",
+      "pattern": "이에요/예요",
+      "meaning": "'이에요/예요' attaches to the end of a noun, such as people or things, describing the noun (copula 'to be').",
+      "form": "'이에요' is used when a noun ends with a consonant, and '예요' is used when a noun ends with a vowel.",
+      "level": "A1",
+      "examples": [
+        "학생이에요.",
+        "미국 사람이에요.",
+        "선생님이에요.",
+        "책이에요.",
+        "한복이에요.",
+        "의사예요."
+      ]
+    },
+    {
+      "key": "g2",
+      "pattern": "은/는",
+      "meaning": "'은/는' attaches to the end of a noun, indicating that the noun is the topic of the sentence.",
+      "form": "'은' is used when a noun ends with a consonant, and '는' is used when a noun ends with a vowel.",
+      "level": "A1",
+      "examples": [
+        "이 사람은 일본 사람이에요.",
+        "이 사람은 마리 씨예요.",
+        "저 사람은 회사원이에요.",
+        "동생은 가수예요.",
+        "저는 한국 사람이에요.",
+        "저는 경찰이에요."
+      ]
+    },
+    {
+      "key": "g3",
+      "pattern": "이/가",
+      "meaning": "'이/가' attaches to a noun, indicating that the noun is the subject of the sentence.",
+      "form": "'이' is used when a noun ends with a consonant, and '가' is used when a noun ends with a vowel.",
+      "level": "A1",
+      "examples": [
+        "주노 씨 동생이 누구예요?",
+        "노래방이 어디예요?",
+        "영화관이 어디예요?",
+        "식당이 어디예요?",
+        "교실이 203호예요?",
+        "안나 씨가 누구예요?"
+      ]
+    },
+    {
+      "key": "g4",
+      "pattern": "이/가 아니에요",
+      "meaning": "'이/가 아니에요' attaches to a noun, indicating that the noun is negated ('is not').",
+      "form": "'이 아니에요' is used when a noun ends with a consonant, and '가 아니에요' is used when a noun ends with a vowel.",
+      "level": "A1",
+      "examples": [
+        "선생님이 아니에요.",
+        "8층이 아니에요.",
+        "학생이 아니에요. 회사원이에요.",
+        "물이 아니에요. 주스예요.",
+        "9121이 아니에요. 9122예요.",
+        "남자 친구가 아니에요."
+      ]
+    },
+    {
+      "key": "g5",
+      "pattern": "이, 그, 저",
+      "meaning": "'이, 그, 저' comes before a noun to point to people or things. '이' is used when a person or a thing is close to the speaker, '저' when it is far from the speaker, and '그' when it is close to the listener.",
+      "form": "Placed before the noun (demonstratives: this / that / that over there).",
+      "level": "A1",
+      "examples": [
+        "이 시계는 누구 시계예요?",
+        "이 시계는 유진 씨 시계예요.",
+        "이 필통은 제 필통이에요.",
+        "그 모자는 누구 모자예요?",
+        "그 사람은 누구예요?",
+        "그 사람은 마리 씨예요."
+      ]
+    },
+    {
+      "key": "g6",
+      "pattern": "에 있다, 없다",
+      "meaning": "'에 있다, 없다' attaches to the end of a noun, indicating the location of people or things (to exist / not exist at a place).",
+      "form": "'에 있다, 없다' is used regardless of whether a noun ends with a consonant or not.",
+      "level": "A1",
+      "examples": [
+        "칠판이 어디에 있어요?",
+        "칠판이 교실에 있어요.",
+        "컴퓨터가 책상 위에 있어요.",
+        "주노 씨가 칠판 앞에 있어요.",
+        "제 펜은 필통 안에 있어요.",
+        "피아노가 교실에 없어요."
+      ]
+    },
+    {
+      "key": "g7",
+      "pattern": "-아요/어요",
+      "meaning": "'-아요/어요' is combined with a verb or an adjective, describing an action or a state (polite present tense).",
+      "form": "'-아요' is used when the final vowel of a verb stem or an adjective stem is 'ㅏ' or 'ㅗ', otherwise '-어요' is used. '하다' is changed to '해요'.",
+      "level": "A1",
+      "examples": [
+        "지금 무엇을 해요?",
+        "텔레비전을 봐요.",
+        "동생이 자요.",
+        "책을 읽어요.",
+        "음악을 들어요.",
+        "불고기를 먹어요."
+      ]
+    },
+    {
+      "key": "g8",
+      "pattern": "을/를",
+      "meaning": "'을/를' attaches to the end of a noun, indicating that the noun is the object of the sentence.",
+      "form": "'을' is used when a noun ends with a consonant, and '를' is used when a noun ends with a vowel.",
+      "level": "A1",
+      "examples": [
+        "게임을 해요.",
+        "운동을 해요.",
+        "꽃을 좋아해요.",
+        "쇼핑을 해요.",
+        "음악을 들어요.",
+        "한국어를 공부해요."
+      ]
+    },
+    {
+      "key": "g9",
+      "pattern": "에 가다",
+      "meaning": "'에 가다' attaches to the end of a noun, expressing its direction or movement towards a destination (to go to).",
+      "form": "'에 가다' is used regardless of whether a noun ends with a consonant or not.",
+      "level": "A1",
+      "examples": [
+        "주노 씨는 어디에 가요?",
+        "식당에 가요.",
+        "집에 가요.",
+        "세종학당에 가요.",
+        "마트에 가요.",
+        "마리 씨는 백화점에 가요."
+      ]
+    },
+    {
+      "key": "g10",
+      "pattern": "하고",
+      "meaning": "'하고' attaches to the end of a noun, connecting the noun and the following noun ('and'). '와/과' can be used instead of '하고'.",
+      "form": "'하고' is used regardless of whether a noun ends with a consonant or not. ('와' after vowel, '과' after consonant for the formal equivalent.)",
+      "level": "A1",
+      "examples": [
+        "영화관하고 카페에 가요.",
+        "선생님하고 수지 씨를 만나요.",
+        "빵하고 우유를 사요.",
+        "라면하고 김밥을 먹어요.",
+        "유진 씨는 화장품하고 가방을 사요.",
+        "시계하고 칠판이 있어요."
+      ]
+    },
+    {
+      "key": "g11",
+      "pattern": "단위 명사",
+      "meaning": "'개, 명, 마리' are unit nouns (counters) used when counting things, people, or animals.",
+      "form": "The appropriate counting words should be used depending on the type of a noun (개 things, 명 people, 마리 animals, 잔 cups, 병 bottles, 권 books, 장 sheets, 살 age).",
+      "level": "A1",
+      "examples": [
+        "책상이 몇 개 있어요?",
+        "책상이 한 개 있어요.",
+        "의자가 다섯 개 있어요.",
+        "시계가 한 개 있어요.",
+        "창문이 두 개 있어요.",
+        "필통이 한 개 있어요."
+      ]
+    },
+    {
+      "key": "g12",
+      "pattern": "-(으)세요",
+      "meaning": "'-(으)세요' is combined with a verb, indicating order or request (polite imperative).",
+      "form": "'-으세요' is used when a verb stem ends with a consonant, and '-세요' is used when a verb stem ends with a vowel. When a verb stem ends with 'ㄹ', the final consonant 'ㄹ' is dropped and then '-세요' is used.",
+      "level": "A1",
+      "examples": [
+        "책을 읽으세요.",
+        "답을 쓰세요.",
+        "질문에 대답하세요.",
+        "다음 대화를 완성하세요.",
+        "알맞은 것을 연결하세요.",
+        "커피 한 잔 주세요."
+      ]
+    },
+    {
+      "key": "g13",
+      "pattern": "에 (temps)",
+      "meaning": "'에' attaches to a noun, indicating the time when a certain action occurs.",
+      "form": "'에' is used regardless of whether a noun ends with a consonant or not. '에' doesn't attach to 오늘(today), 내일(tomorrow), 어제(yesterday), 언제(when), 지금(now), 매일(everyday), 요즘(recently). '에' cannot be used in front of '이에요/예요'.",
+      "level": "A1",
+      "examples": [
+        "월요일에 뭐 해요?",
+        "화요일에 뭐 해요?",
+        "수요일에 영화를 봐요.",
+        "목요일에 세종학당에 가요.",
+        "금요일에 수영을 해요.",
+        "오늘 점심에 친구를 만나요."
+      ]
+    },
+    {
+      "key": "g14",
+      "pattern": "○시 ○분",
+      "meaning": "'○시 ○분' is used to express the time (hours and minutes).",
+      "form": "Native Korean numbers (한, 두, 세…) are used in front of '시', and Sino-Korean numbers (일, 이, 삼…) are used in front of '분'.",
+      "level": "A1",
+      "examples": [
+        "아침 일곱 시 삼십 분에 일어나요.",
+        "여덟 시 삼십 분에 학교에 가요.",
+        "아홉 시 삼십 분에 수업이 있어요.",
+        "열두 시 삼십 분에 점심을 먹어요.",
+        "오후 세 시에 친구를 만나요.",
+        "오후 네 시에 요리를 배워요."
+      ]
+    },
+    {
+      "key": "g15",
+      "pattern": "안",
+      "meaning": "'안' comes before a verb or an adjective, expressing negation or opposite meaning.",
+      "form": "'안' is used in front of a verb or an adjective. The verb in the form of a 'noun'+'하다' can be used in the form of a 'noun'+'안 하다'. It cannot be combined with '있다' or '없다'.",
+      "level": "A1",
+      "examples": [
+        "오늘 안 바빠요.",
+        "오늘 영화를 안 봐요.",
+        "오늘 친구를 안 만나요.",
+        "주말에 공원에 안 가요.",
+        "내일 일 안 해요.",
+        "여름을 안 좋아해요."
+      ]
+    },
+    {
+      "key": "g16",
+      "pattern": "ㅂ 불규칙",
+      "meaning": "When a verb stem or an adjective stem ending with 'ㅂ' is followed by a vowel, 'ㅂ' is changed to '우'. However, not all verbs and adjectives that end in 'ㅂ' are irregular.",
+      "form": "When adjectives such as 덥다(hot), 춥다(cold), 맵다(spicy), 무겁다(heavy), 가볍다(light), 쉽다(easy), 어렵다(difficult) are followed by a vowel, 'ㅂ' is changed to '우'. '우' is combined with '-어요' and becomes '워요'. However, 입다, 좁다, 잡다, which are not ㅂ irregular verbs, do not follow this rule.",
+      "level": "A1",
+      "examples": [
+        "요즘 날씨가 더워요.",
+        "한국은 겨울 날씨가 추워요.",
+        "공부가 쉬워요.",
+        "책이 어려워요.",
+        "요리가 어려워요.",
+        "김치가 매워요."
+      ]
+    },
+    {
+      "key": "g17",
+      "pattern": "에서",
+      "meaning": "'에서' attaches to the end of a noun, indicating where an action occurs.",
+      "form": "'에서' is used regardless of whether a noun ends with a consonant or not.",
+      "level": "A1",
+      "examples": [
+        "주말에 공원에서 뭐 해요?",
+        "공원에서 산책해요.",
+        "영화관에서 영화를 봐요.",
+        "백화점에서 쇼핑을 해요.",
+        "카페에서 친구를 만나요.",
+        "집에서 텔레비전을 봐요."
+      ]
+    },
+    {
+      "key": "g18",
+      "pattern": "-았/었-",
+      "meaning": "'-았/었-' is combined with a verb or an adjective, describing an action or a state in the past.",
+      "form": "'-았-' is used when the final vowel of a verb stem or an adjective stem is 'ㅏ' or 'ㅗ', otherwise '-었-' is used. '하다' is changed to '했'.",
+      "level": "A1",
+      "examples": [
+        "집에서 영화를 봤어요.",
+        "토요일에 친구를 만났어요.",
+        "식당에서 불고기를 먹었어요.",
+        "도서관에서 책을 읽었어요.",
+        "집에서 쉬었어요.",
+        "아주 재미있었어요."
+      ]
+    },
+    {
+      "key": "g19",
+      "pattern": "-고 싶다",
+      "meaning": "'-고 싶다' is combined with a verb, indicating what a speaker wants. '-고 싶어 하다' is used when the subject of a sentence is a 3rd person.",
+      "form": "'-고 싶다' is used regardless of whether a verb ends with a consonant or not. When the subject is another person, use '-고 싶어 하다'.",
+      "level": "A1",
+      "examples": [
+        "저녁에 뭘 먹고 싶어요?",
+        "한국에 가고 싶어요.",
+        "사진을 찍고 싶어요.",
+        "친구를 만나고 싶어요.",
+        "커피를 마시고 싶어요.",
+        "안나 씨는 어디에 가고 싶어 해요?"
+      ]
+    },
+    {
+      "key": "g20",
+      "pattern": "-(으)ㄹ까요?",
+      "meaning": "'-(으)ㄹ까요?' is combined with a verb, asking the listener's opinion about a particular action ('shall we...?').",
+      "form": "Combined with a verb or an adjective. '-을까요?' is used when the stem ends with a consonant, '-ㄹ까요?' when it ends with a vowel. When the stem ends with 'ㄹ,' the final consonant 'ㄹ' is dropped and then '-ㄹ까요?' is used.",
+      "level": "A1",
+      "examples": [
+        "여기에 앉을까요?",
+        "같이 저녁을 먹을까요?",
+        "여기에서 사진을 찍을까요?",
+        "오후에 노래방에 갈까요?",
+        "내일 같이 영화를 볼까요?",
+        "놀이공원 앞에서 만날까요?"
+      ]
+    },
+    {
+      "key": "g21",
+      "pattern": "무슨",
+      "meaning": "Used before a noun to ask about that noun more specifically.",
+      "form": "Always used in front of a noun.",
+      "level": "A1",
+      "examples": [
+        "무슨 계절을 좋아해요?",
+        "무슨 운동을 자주 해요?",
+        "무슨 음식을 자주 먹어요?",
+        "무슨 선물을 받고 싶어요?",
+        "무슨 과일을 샀어요?",
+        "무슨 음악을 가장 좋아해요?"
+      ]
+    },
+    {
+      "key": "g22",
+      "pattern": "못",
+      "meaning": "Used before a verb to indicate that a certain action does not occur due to inability or other reasons.",
+      "form": "Used in front of a verb. A verb in the form of 'noun'+'하다' becomes 'noun'+'못 하다'.",
+      "level": "A1",
+      "examples": [
+        "혼자 밥을 못 먹어요.",
+        "자전거를 못 타요.",
+        "피아노를 못 쳐요.",
+        "고기를 못 먹어요.",
+        "생선을 못 먹어요.",
+        "여행을 못 가요."
+      ]
+    },
+    {
+      "key": "g23",
+      "pattern": "-(으)러 가다",
+      "meaning": "Combined with a verb to indicate the purpose of a movement.",
+      "form": "'-으러 가다' is used when a verb stem ends with a consonant, and '-러 가다' is used when a verb stem ends with a vowel. '-러 가다' is used when a verb stem ends with 'ㄹ.'",
+      "level": "A1",
+      "examples": [
+        "돈을 찾으러 은행에 가요.",
+        "한국어 수업을 들으러 세종학당에 가요.",
+        "책을 빌리러 도서관에 가요.",
+        "선생님을 만나러 세종학당 사무실에 가요.",
+        "운동을 하러 헬스클럽에 가요.",
+        "커피를 마시러 카페에 가요."
+      ]
+    },
+    {
+      "key": "g24",
+      "pattern": "도",
+      "meaning": "Attaches to the end of a noun or some postpositional particles, indicating that something is added to the thing already mentioned.",
+      "form": "'도' is used regardless of whether a noun or a postpositional particle ends with a consonant or not. When '도' attaches to the end of the subject or the object in a sentence, '은/는,' '이/가,' and '을/를' are not used. However, in the case of '에' and '에서,' '에도' and '에서도' are used.",
+      "level": "A1",
+      "examples": [
+        "저는 축구를 좋아해요. 테니스도 좋아해요.",
+        "오늘 생일 파티에 안나 씨가 와요. 그리고 수지 씨도 와요.",
+        "수영을 배우고 싶어요. 그리고 테니스도 배우고 싶어요.",
+        "사과를 사요. 그리고 바나나도 사요.",
+        "옷을 사고 싶어요. 그리고 구두도 사고 싶어요.",
+        "기타를 쳐요. 그리고 그림도 그려요."
+      ]
+    },
+    {
+      "key": "g25",
+      "pattern": "-아서/어서",
+      "meaning": "Combined with a verb or an adjective and used to indicate reasons.",
+      "form": "'-아서' is used when the final vowel of a verb stem is 'ㅏ' or 'ㅗ,' otherwise '-어서' is used. '하다' is changed to '해서.' It cannot be combined with '-았/었-' which indicates the past tense or with '-겠-' which indicates the future tense or a supposition. The subject of the first clause should be the same as that of the second clause, and the subject of the second clause is usually omitted.",
+      "level": "A1",
+      "examples": [
+        "일이 많아서 회사에 있어요.",
+        "비가 와서 수영을 못 해요.",
+        "비가 와서 집에 있었어요.",
+        "요즘 바빠서 운동을 못 해요.",
+        "생일 파티가 있어서 친구 집에 가요.",
+        "아침에 밥을 못 먹어서 점심을 많이 먹었어요."
+      ]
+    },
+    {
+      "key": "g26",
+      "pattern": "-(으)ㄹ 거예요 (futur)",
+      "meaning": "Exprimer une intention ou un plan futur — 'je vais...', 'j'ai l'intention de...'",
+      "form": "'-을 거예요' is used when a verb stem ends with a consonant, and '-ㄹ 거예요' is used when a verb stem ends with a vowel. When a verb stem ends with 'ㄹ,' '거예요' is used.",
+      "level": "A1",
+      "examples": [
+        "저녁에 한국 음식을 먹을 거예요.",
+        "집에서 책을 읽을 거예요.",
+        "오후에 영화를 볼 거예요.",
+        "내일 신발을 살 거예요.",
+        "주말에 바다에 갈 거예요.",
+        "주말에 마트에 갈 거예요."
+      ]
+    },
+    {
+      "key": "g27",
+      "pattern": "-(으)ㄴ",
+      "meaning": "Combined with a verb, indicating that an action or behavior has occurred in the past or a completed action has been continued. Used to modify the following noun by changing the verb to a noun modifier form.",
+      "form": "'-은' is used when an adjective stem ends with a consonant, and '-ㄴ' is used when an adjective stem ends with a vowel. When an adjective stem ends with 'ㄹ,' 'ㄹ' is dropped and then '-ㄴ' is used.",
+      "level": "A1",
+      "examples": [
+        "넓은 침대가 있어요.",
+        "좋은 노래를 부르고 싶습니다.",
+        "작은 케이크를 샀어요.",
+        "작은 책상이 있어요.",
+        "큰 캐리어를 살 거예요.",
+        "큰 창문이 있어요."
+      ]
+    },
+    {
+      "key": "g28",
+      "pattern": "-습니다/ㅂ니다, -습니까?/ㅂ니까?",
+      "meaning": "Combined with a verb or an adjective, describing or asking something. It is a formal style used in situations where manners and formality are required.",
+      "form": "'-습니다' and '-습니까?' are used when a verb stem or an adjective stem ends with a consonant, and '-ㅂ니다' and '-ㅂ니까?' when it ends with a vowel. When a verb or an adjective stem ends with 'ㄹ,' the final consonant 'ㄹ' is dropped and then '-ㅂ니다' and '-ㅂ니까?' are used.",
+      "level": "A1",
+      "examples": [
+        "책을 읽습니다.",
+        "음악을 듣습니다.",
+        "여기 있습니다.",
+        "잠을 잡니다.",
+        "빵을 만듭니다.",
+        "긴 바지가 있습니까?"
+      ]
+    },
+    {
+      "key": "g29",
+      "pattern": "의문사",
+      "meaning": "Interrogatives such as 누구(who), 어디(where), 무엇(what), 언제(when), 얼마(how much), 어떻게(how), 왜(why), 몇(how many), and 어떤(which) are used to ask questions.",
+      "form": "(no specific form rule beyond using the interrogative word in the question)",
+      "level": "A1",
+      "examples": [
+        "무엇을 좋아해요?",
+        "오늘 누구를 만나요?",
+        "생일이 언제예요?",
+        "시간이 얼마나 걸려요?",
+        "어떤 음식을 좋아해요?",
+        "취미가 뭐예요?"
+      ]
+    },
+    {
+      "key": "g30",
+      "pattern": "(으)로",
+      "meaning": "Attaches to the end of a noun, indicating a destination or a direction.",
+      "form": "'으로' is used when a noun ends with a consonant, and '로' is used when a noun ends with a vowel. When a noun ends with 'ㄹ,' '로' is used.",
+      "level": "A1",
+      "examples": [
+        "오른쪽으로 가세요.",
+        "왼쪽으로 가세요.",
+        "앞으로 똑바로 가세요.",
+        "뒤로 돌아가세요.",
+        "2층으로 올라가세요.",
+        "지하 1층으로 내려가세요."
+      ]
+    },
+    {
+      "key": "g31",
+      "pattern": "○에서 ○까지",
+      "meaning": "Attaches to the end of a noun, indicating a point of departure and a destination.",
+      "form": "'○에서 ○까지' is used regardless of whether a noun ends with a consonant or not.",
+      "level": "A1",
+      "examples": [
+        "집에서 학교까지 어떻게 가요?",
+        "세종학당에서 집까지 어떻게 가요?",
+        "버스 정류장에서 서울호텔까지 어떻게 가요?",
+        "제주도에서 부산까지 어떻게 가요?",
+        "여러분 나라에서 한국까지 어떻게 가요?",
+        "여기에서 집까지 어떻게 가요?"
+      ]
+    },
+    {
+      "key": "g32",
+      "pattern": "-(으)려고 하다",
+      "meaning": "Combined with a verb, indicating a plan or an intention.",
+      "form": "'-으려고 하다' is used when a verb stem ends with a consonant, and '-려고 하다' is used when a verb stem ends with a vowel. When a verb stem ends with 'ㄹ,' '-려고 하다' is used.",
+      "level": "A1",
+      "examples": [
+        "책을 많이 읽으려고 해요.",
+        "닭갈비를 먹으려고 해요.",
+        "머리를 자르려고 해요.",
+        "한라산에 올라가려고 해요.",
+        "청소를 하려고 해요.",
+        "오늘 날씨가 좋아서 자전거를 타려고 해요."
+      ]
+    },
+    {
+      "key": "g33",
+      "pattern": "-고",
+      "meaning": "Combined with a verb or an adjective and used to list two or more facts or statements.",
+      "form": "'-고' is used regardless of whether a verb stem or an adjective stem ends with a consonant or not. The past or future tense is not applied to the first clause. '도' can be added to the end of a noun to indicate that the following verb or adjective applies to both the first and second clauses. The order of the first and second clauses can be exchanged. It can be used when the subject of the first clause is different from that of the second clause.",
+      "level": "A1",
+      "examples": [
+        "수지는 텔레비전을 보고 마리는 요리해요.",
+        "수지는 청소를 하고 마리는 친구를 만나요.",
+        "친구를 만나고 청소도 할 거예요.",
+        "한국어 공부를 하고 아르바이트도 해요.",
+        "텔레비전을 보고 책도 읽어요.",
+        "저는 드라마를 보고 게임도 할 거예요."
+      ]
+    },
+    {
+      "key": "g34",
+      "pattern": "-(으)ㄴ 후에",
+      "meaning": "Combined with a verb, indicating that the former action occurred before the latter action.",
+      "form": "'-은 후에' is used when a verb stem ends with a consonant, and '-ㄴ 후에' is used when a verb stem ends with a vowel. When a verb stem ends with 'ㄹ' it is dropped and then '-ㄴ 후에' is used. It indicates that the former action occurred before the latter action, so both the past tense and future tense can be used in the second clause.",
+      "level": "A1",
+      "examples": [
+        "밥을 먹은 후에 물을 마셔요.",
+        "책을 읽은 후에 텔레비전을 봐요.",
+        "운동한 후에 샤워해요.",
+        "설거지를 한 후에 뭐 할 거예요?",
+        "자전거를 탄 후에 산책해요.",
+        "쇼핑을 한 후에 콘서트를 보러 갑니다."
+      ]
+    },
+    {
+      "key": "g35",
+      "pattern": "보다",
+      "meaning": "Attaches to the end of a noun, indicating that the noun attached to '보다' is a basis of comparison.",
+      "form": "'보다' is used regardless of whether a noun ends with a consonant or not. It can be used along with '더.' The noun attached to '보다' can be placed before or after the noun against which the comparison is made.",
+      "level": "A1",
+      "examples": [
+        "수영보다 축구를 더 좋아해요.",
+        "설악산보다 한라산이 더 높아요.",
+        "버스보다 지하철이 더 편해요.",
+        "불고기보다 삼계탕이 더 맛있어요.",
+        "이번 여행이 지난번 여행보다 더 좋았어요.",
+        "정장보다 한복이 더 좋습니다."
+      ]
+    },
+    {
+      "key": "g36",
+      "pattern": "-지만",
+      "meaning": "Combined with a verb or an adjective, indicating that the following action or description is contrary to the preceding one.",
+      "form": "'-지만' is used regardless of whether a verb stem or an adjective stem ends with a consonant or not. It can be combined with '-았/었-' which indicates the past tense and '-겠-' which indicates the future tense or a supposition. The subjects in the first clause and the second clause can be different. A postpositional particle '은/는' is used to express a contrast.",
+      "level": "A1",
+      "examples": [
+        "맛있지만 좀 비싸요.",
+        "예쁘지만 불편해요.",
+        "싸지만 불편해요.",
+        "날씨가 더웠지만 좋았어요.",
+        "토요일에는 가지만 일요일에는 안 가요.",
+        "아까는 복잡했지만 지금은 안 복잡해요."
+      ]
+    },
+    {
+      "key": "g37",
+      "pattern": "-아야/어야 되다",
+      "meaning": "Combined with a verb or an adjective, indicating that something must be done or be in a certain condition.",
+      "form": "'-아야 되다' is used when the final vowel of a verb stem or an adjective stem is 'ㅏ' or 'ㅗ,' otherwise '-어야 되다' is used. '하다' is changed to '해야 되다.'",
+      "level": "A1",
+      "examples": [
+        "단어를 외워야 돼요.",
+        "버스를 타고 가야 돼요.",
+        "내일 다시 병원에 가야 돼요.",
+        "잠을 푹 자야 돼요.",
+        "옷을 많이 입어야 돼요.",
+        "약을 잘 먹고 푹 쉬어야 돼요."
+      ]
+    },
+    {
+      "key": "g38",
+      "pattern": "-기 전에",
+      "meaning": "Combined with a verb, indicating that the latter action occurred before the former action.",
+      "form": "'-기 전에' is used regardless of whether a verb stem ends with a consonant or not.",
+      "level": "A1",
+      "examples": [
+        "저녁을 먹기 전에 쇼핑을 할까요?",
+        "수영을 하기 전에 준비 운동을 했어요?",
+        "자기 전에 보통 책을 읽어요.",
+        "고향에 돌아가기 전에 같이 식사해요.",
+        "친구 생일 파티를 하기 전에 꽃을 사요.",
+        "결혼식을 하기 전에 친구를 초대해요."
+      ]
+    },
+    {
+      "key": "g39",
+      "pattern": "-(으)ㄹ 수 있다, 없다",
+      "meaning": "Combined with a verb, used to indicate ability or possibility. '-(으)ㄹ 수 없다' is used at the end of a verb when someone cannot do something or when something is not possible.",
+      "form": "'-을 수 있다, 없다' is used when a verb stem ends with a consonant, and '-ㄹ 수 있다, 없다' is used when a verb stem ends with a vowel. When a verb stem ends with 'ㄹ,' '수 있다, 없다' is used.",
+      "level": "A1",
+      "examples": [
+        "이 책을 읽을 수 있어요.",
+        "수영을 할 수 있어요.",
+        "피아노를 칠 수 있어요.",
+        "스키를 탈 수 있어요.",
+        "다리를 다쳐서 운동할 수 없어요.",
+        "다른 약속이 있어서 만날 수 없어요."
+      ]
+    },
+    {
+      "key": "g40",
+      "pattern": "-고 있다",
+      "meaning": "Combined with a verb and used to indicate that a certain action is in progress.",
+      "form": "'-고 있다' is used regardless of whether a verb stem ends with a consonant or not.",
+      "level": "A1",
+      "examples": [
+        "라면을 먹고 있어요.",
+        "음악을 듣고 있어요.",
+        "책을 읽고 있어요.",
+        "청소하고 있어요.",
+        "테니스를 치고 있어요.",
+        "자전거를 타고 있어요."
+      ]
+    },
+    {
+      "key": "g41",
+      "pattern": "에게, 한테",
+      "meaning": "Attaches to the end of a noun, indicating a target that is affected by an action.",
+      "form": "'에게, 한테' is used regardless of whether a noun ends with a consonant or not.",
+      "level": "A1",
+      "examples": [
+        "안나 씨가 유진 씨에게 선물을 주었어요.",
+        "아버지가 주노 씨에게 사과를 주었어요.",
+        "재민 씨가 누나에게 편지를 보낼 거예요.",
+        "수지 씨가 동생에게 전화하고 있어요.",
+        "마리 씨가 리사 씨에게 축하 카드를 썼어요.",
+        "주노 씨가 수지 씨한테 전화를 했어요."
+      ]
+    },
+    {
+      "key": "g42",
+      "pattern": "-(으)니까",
+      "meaning": "Combined with a verb or an adjective and used to express reasons.",
+      "form": "'-으니까' is used when a verb stem or an adjective stem ends with a consonant, and '-니까' is used when it ends with a vowel. When a verb stem or an adjective stem ends with 'ㄹ,' the final consonant 'ㄹ' is dropped and then '-니까' is used.",
+      "level": "A1",
+      "examples": [
+        "날씨가 좋으니까 산책을 해요.",
+        "날씨가 추우니까 영화관에 가요.",
+        "세종식당이 싸고 맛있으니까 거기로 가요.",
+        "지금은 약속이 있으니까 주말에 해요.",
+        "배가 안 고프니까 차를 마셔요.",
+        "이번 주에는 바쁘니까 다음 주에 봐요."
+      ]
+    },
+    {
+      "key": "g43",
+      "pattern": "(이)라고 하다",
+      "meaning": "Combined with a noun and used to introduce someone or something, often when giving one's name.",
+      "form": "Used at the end of someone or something to say what it is called. Used with a noun or with a quoted expression.",
+      "level": "A2",
+      "examples": [
+        "주노라고 해요.",
+        "재민이라고 해요.",
+        "수지라고 해요.",
+        "히엔이라고 해요.",
+        "'eraser'를 한국어로 뭐라고 해요?",
+        "'지우개'라고 해요."
+      ]
+    },
+    {
+      "key": "g44",
+      "pattern": "-는",
+      "meaning": "Combined with a verb, indicates that a certain behavior or action is currently taking place.",
+      "form": "Used regardless of whether a verb stem ends with a consonant or not. When a verb stem ends with 'ㄹ,' the final consonant 'ㄹ' is dropped.",
+      "level": "A2",
+      "examples": [
+        "좋아하는 운동이에요.",
+        "자주 마시는 커피예요.",
+        "가구를 만드는 일을 해요.",
+        "웃는 사람을 좋아해요.",
+        "제가 자주 듣는 음악은 한국 음악이에요.",
+        "주말에 자주 가는 곳은 카페예요."
+      ]
+    },
+    {
+      "key": "g45",
+      "pattern": "-거나, (이)나",
+      "meaning": "'-거나' is combined with a verb or an adjective while '(이)나' is combined with a noun. Both express that one out of two or more actions or facts has been selected.",
+      "form": "'-거나' is combined with a verb or an adjective regardless of whether the verb stem ends with a consonant or not. '(이)나' is combined with a noun: '이나' when the noun ends with a consonant, '나' when it ends with a vowel.",
+      "level": "A2",
+      "examples": [
+        "드라마를 보거나 게임을 해요.",
+        "소설을 읽거나 악기를 연주해요.",
+        "주말에는 배드민턴을 치거나 스포츠 경기를 봐요.",
+        "휴일에는 공원에서 산책을 하거나 배드민턴을 쳐요.",
+        "주말에는 게임이나 운동을 해요.",
+        "저는 영화나 드라마를 자주 봐요."
+      ]
+    },
+    {
+      "key": "g46",
+      "pattern": "마다",
+      "meaning": "A postpositional particle attached to a noun, meaning that 'all is applicable without exception.'",
+      "form": "Combined with a noun regardless of whether the noun ends with a consonant or not. There are idioms such as '밤이면 밤마다 (night after night)' and '날이면 날마다 (day after day).'",
+      "level": "A2",
+      "examples": [
+        "토요일마다 등산을 해요.",
+        "목요일마다 운동을 해요.",
+        "일요일마다 데이트를 해요.",
+        "월요일하고 수요일마다 수업을 들어요.",
+        "수요일 오후마다 세종학당에 가요.",
+        "아침마다 무엇을 해요?"
+      ]
+    },
+    {
+      "key": "g47",
+      "pattern": "-(으)ㄹ 때",
+      "meaning": "Combined with a verb or an adjective, indicating the moment when an action or situation occurs or its duration.",
+      "form": "'-을 때' is used when the stem ends with a consonant, '-ㄹ 때' when it ends with a vowel. When the stem ends with 'ㄹ,' the final consonant is dropped and then '-ㄹ 때' is used.",
+      "level": "A2",
+      "examples": [
+        "회사에 갈 때 정장을 입어요.",
+        "시간이 있을 때 운동을 해요.",
+        "학교에 늦었을 때 택시를 타요.",
+        "맛있는 음식을 먹을 때 제일 행복해요.",
+        "산책하고 싶을 때 공원에 가요.",
+        "옷을 사고 싶을 때 백화점에 가요."
+      ]
+    },
+    {
+      "key": "g48",
+      "pattern": "-기로 하다",
+      "meaning": "Combined with a verb, indicating that a certain action has been planned or decided. Usually used to promise an action or talk about one's decision.",
+      "form": "When talking about what has already been decided, the past tense is used even if the relevant event will occur in the future.",
+      "level": "A2",
+      "examples": [
+        "데이트를 하기로 했어요.",
+        "5시에 회사 앞에서 만나기로 했어요.",
+        "친구하고 같이 밥을 먹기로 했어요.",
+        "주말에 시내에서 놀기로 했어요.",
+        "친구하고 차를 마시고 영화를 보기로 했어요.",
+        "친구하고 쇼핑하기로 했어요."
+      ]
+    },
+    {
+      "key": "g49",
+      "pattern": "에다가",
+      "meaning": "Used with a noun, indicating that the following noun is added to the preceding noun.",
+      "form": "'에' or '에다' can be used instead of '에다가.' '에다가' and its contracted form '에다' are mainly used in spoken language, unlike '에.' Combined with a noun regardless of whether it ends with a consonant or not.",
+      "level": "A2",
+      "examples": [
+        "바지에다가 블라우스를 입었어요.",
+        "반바지에다가 티셔츠를 입으세요.",
+        "스웨터에다가 장갑을 끼고 목도리를 해요.",
+        "와이셔츠하고 청바지에다가 운동화를 신어요.",
+        "목에다가 목도리를 했어요.",
+        "원피스에다가 스카프를 하세요."
+      ]
+    },
+    {
+      "key": "g50",
+      "pattern": "-기가 좋다",
+      "meaning": "Used with a verb, indicating that it is easy and comfortable to do a certain action.",
+      "form": "Combined with a verb regardless of whether the stem ends with a consonant or not. Instead of '-기가 좋다,' '-기 좋다' is also used without '가.'",
+      "level": "A2",
+      "examples": [
+        "부엌이 넓어서 요리하기 좋아요.",
+        "도서관이 조용해서 책을 읽기 좋았어요.",
+        "봄에는 날씨가 따뜻해서 산책하기가 좋아요.",
+        "이 바지는 시원해서 여름에 입기 좋을 거예요.",
+        "이 책은 쉽고 재미있어서 아이들에게 선물하기 좋아요.",
+        "짐이 많아서 청소하기 안 좋아요."
+      ]
+    },
+    {
+      "key": "g51",
+      "pattern": "-지 않다, -지 못하다",
+      "meaning": "'-지 않다' combined with a verb means the subject has no will to do something; combined with an adjective, it means the subject is not in a particular condition. '-지 못하다' is combined only with a verb and means the subject is unable to do something.",
+      "form": "'-지 않다' is combined with a verb or an adjective regardless of whether the stem ends with a consonant or not. '-지 못하다' is combined with a verb regardless of whether the stem ends with a consonant or not.",
+      "level": "A2",
+      "examples": [
+        "산책을 자주 하지 않아요.",
+        "음악을 자주 듣지 않아요.",
+        "제 방에는 큰 창문이 있어서 어둡지 않아요.",
+        "안나 씨는 매일 청소를 해서 방이 별로 지저분하지 않아요.",
+        "방이 좁아서 친구를 많이 초대하지 못해요.",
+        "냉장고가 너무 무거워서 혼자 버리지 못해요."
+      ]
+    },
+    {
+      "key": "g52",
+      "pattern": "-(으)면서",
+      "meaning": "Indicates that two or more actions are being performed at the same time.",
+      "form": "Combined with a verb. '-으면서' is used when the verb stem ends with a consonant, and '-면서' when it ends with a vowel. When a verb stem ends with 'ㄹ,' '-면서' is used.",
+      "level": "A2",
+      "examples": [
+        "음악을 들으면서 공부해요.",
+        "친구가 기타를 치면서 노래해요.",
+        "친구하고 이야기하면서 산책해요.",
+        "저는 밥을 먹으면서 텔레비전을 봐요.",
+        "친구들과 게임을 하면서 놀고 있어요.",
+        "여행을 다니면서 사진을 찍어요."
+      ]
+    },
+    {
+      "key": "g53",
+      "pattern": "-지요?",
+      "meaning": "Used as a sentence closing ending, indicating that the speaker reconfirms what he/she already knows.",
+      "form": "Combined with a verb or an adjective regardless of whether the stem ends with a consonant or not.",
+      "level": "A2",
+      "examples": [
+        "저 사람 너무 멋있지요?",
+        "이 노래가 정말 좋지요?",
+        "한국 여름은 아주 덥지요?",
+        "안나 씨는 회사원이지요?",
+        "오늘 비가 정말 많이 오지요?",
+        "우리 토요일에 만나기로 했지요?"
+      ]
+    },
+    {
+      "key": "g54",
+      "pattern": "-(으)면",
+      "meaning": "Combined with a verb or an adjective, used to suppose the condition or basis for something mentioned in the second clause, or to suppose a fact that is not certain or yet realized.",
+      "form": "'-으면' is used when the verb/adjective stem ends with a consonant, '-면' when it ends with a vowel. When the stem ends with 'ㄹ,' '-면' is used.",
+      "level": "A2",
+      "examples": [
+        "단 음식을 먹으면 기분이 좋아요.",
+        "저는 머리가 아프면 자요.",
+        "추우면 옷을 많이 입으세요.",
+        "시간이 있으면 여행 가고 싶어요.",
+        "한국에 가면 한국 음식을 먹을 거예요.",
+        "좋아하는 배우나 가수를 만나면 같이 사진을 찍을 거예요."
+      ]
+    },
+    {
+      "key": "g55",
+      "pattern": "ㅅ 불규칙",
+      "meaning": "Among verbs and adjectives ending with the consonant 'ㅅ' (such as 붓다, 젓다, 짓다, 낫다), some drop the 'ㅅ' when combined with an ending starting with a vowel; this is called the 'ㅅ irregular conjugation.' However, verbs such as 씻다, 웃다, 벗다 follow regular conjugation.",
+      "form": "For verb/adjective stems ending with 'ㅅ' such as 붓다, 젓다, 짓다, 낫다, the final consonant 'ㅅ' is omitted when combined with an ending starting with a vowel, such as '-아요/어요' and '-(으)면.'",
+      "level": "A2",
+      "examples": [
+        "약을 먹고 아픈 것이 다 나았어요.",
+        "이 빌딩은 10년 전에 지었어요.",
+        "우유에 꿀을 넣고 저었어요.",
+        "어제 많이 울어서 눈이 부었어요.",
+        "고양이 이름을 나비라고 지을 거예요.",
+        "생강차를 마시면 감기가 빨리 나을 거예요."
+      ]
+    },
+    {
+      "key": "g56",
+      "pattern": "-는데/(으)ㄴ데",
+      "meaning": "Combined with a verb, an adjective, '이다, 아니다,' presenting the background or related situation about the fact stated in the following clause. Also used to explain the related background before asking, ordering, or suggesting something in the second clause.",
+      "form": "For verbs, '-는데' is used regardless of whether the stem ends with a consonant or not ('ㄹ' is dropped). For adjectives, '-은데' is used when the stem ends with a consonant, '-ㄴ데' when it ends with a vowel ('있다,' '없다' use '-는데'). For 'noun+이다' and 'noun+이/가 아니다,' '-ㄴ데' is used.",
+      "level": "A2",
+      "examples": [
+        "요즘 한국어를 공부하는데 아주 재미있어요.",
+        "비가 오는데 택시를 탈까요?",
+        "심심한데 영화 볼까요?",
+        "날씨가 좋은데 산에 갈까요?",
+        "공부를 하는데 친구가 왔어요.",
+        "요즘 요리를 배우고 있는데 재미있어요."
+      ]
+    },
+    {
+      "key": "g57",
+      "pattern": "-아/어 보다",
+      "meaning": "Combined with a verb, indicating something that has been experienced or tried. Mainly used to refer to particular experiences such as travel or hobbies.",
+      "form": "'-아 보다' is used when the final vowel of the verb stem is 'ㅏ' or 'ㅗ,' otherwise '-어 보다' is used. '하다' is changed to '-해 보다.'",
+      "level": "A1",
+      "examples": [
+        "이 책이 정말 재미있는데 한번 읽어 보세요.",
+        "가슴이 답답하면 산책을 해 보세요.",
+        "이 옷이 멋있는데 한번 입어 보세요.",
+        "이 노래 아주 좋은데 한번 들어 보세요.",
+        "저 모자가 예쁜데 한번 써 보세요.",
+        "불고기가 맛있는데 한번 먹어 보세요."
+      ]
+    },
+    {
+      "key": "g58",
+      "pattern": "-는/(으)ㄴ/(으)ㄹ 것 같다",
+      "meaning": "Used with a verb, an adjective, '이다' or '아니다,' indicating that the speaker supposes something.",
+      "form": "Combined with a verb or an adjective. Future tense: '-을 것 같다' (consonant ending) or '-ㄹ 것 같다' (vowel ending, 'ㄹ' dropped if stem ends in 'ㄹ'). Present tense verbs: '-는 것 같다' regardless of ending ('ㄹ' dropped if applicable); present tense adjectives: '-은 것 같다' (consonant) or '-ㄴ 것 같다' (vowel, 'ㄹ' dropped if applicable). Past tense verbs: '-은 것 같다' (consonant) or '-ㄴ 것 같다' (vowel, 'ㄹ' dropped if applicable).",
+      "level": "A2",
+      "examples": [
+        "이 가방은 좀 비싼 것 같아요.",
+        "이 영화가 재미있을 것 같아요.",
+        "저 사람은 미나 씨 친구인 것 같아요.",
+        "지금 밖에 비가 오는 것 같아요.",
+        "어제 저녁에 비가 온 것 같아요.",
+        "내일 아침에 비가 올 것 같아요."
+      ]
+    },
+    {
+      "key": "g59",
+      "pattern": "-는 게 어때요?",
+      "meaning": "Combined with a verb, making a suggestion to the listener.",
+      "form": "Combined with a verb regardless of whether the stem ends with a consonant or not. When the stem ends with 'ㄹ,' the final consonant 'ㄹ' is dropped.",
+      "level": "A2",
+      "examples": [
+        "우리 집에서 같이 밥을 먹는 게 어때요?",
+        "인터넷으로 피자를 주문하는 게 어때요?",
+        "시간이 없으니까 빵과 우유를 먹는 게 어때요?",
+        "식당에 전화해서 먹고 싶은 음식을 시키는 게 어때요?",
+        "배가 고파요. 식당에 가는 게 어때요?",
+        "음식이 너무 짜요. 물을 좀 넣는 게 어때요?"
+      ]
+    },
+    {
+      "key": "g60",
+      "pattern": "ㅎ 불규칙",
+      "meaning": "An adjective stem ending with 'ㅎ' (such as 하얗다, 까맣다, 파랗다, 빨갛다, 노랗다, 어떻다, 그렇다) does not follow regular conjugation rules when combined with a sentence ending vowel.",
+      "form": "When an adjective stem ending with 'ㅎ' is combined with a conjunctive ending starting with '으' (such as '-(으)면', '-(으)니까'), the final consonant 'ㅎ' is omitted. When combined with '아' or '어,' the final consonant 'ㅎ' is omitted and then '-아/어' is changed to '-애/얘.'",
+      "level": "A2",
+      "examples": [
+        "저 노란 우산 주세요.",
+        "저 빨간 장미 주세요.",
+        "파란 바다를 보고 싶어요.",
+        "저는 제 까만 머리가 좋아요.",
+        "사과가 빨개요.",
+        "가을 하늘이 파래요."
+      ]
+    },
+    {
+      "key": "g61",
+      "pattern": "-(으)면 좋겠다",
+      "meaning": "Combined with a verb or an adjective, expressing a wish or a hope.",
+      "form": "'-으면 좋겠어요' is used when the stem ends with a consonant. '-면 좋겠어요' is used when the stem ends with a vowel or 'ㄹ.'",
+      "level": "A2",
+      "examples": [
+        "가격이 좀 더 싸면 좋겠어요.",
+        "길이가 더 길면 좋겠어요.",
+        "디자인이 더 단순하면 좋겠어요.",
+        "빨리 점심을 먹으면 좋겠어요.",
+        "학교에서 좀 더 가까우면 좋겠어요.",
+        "창문을 좀 열면 좋겠어요."
+      ]
+    },
+    {
+      "key": "g62",
+      "pattern": "-(으)ㄴ 적이 있다",
+      "meaning": "Combined with a verb, expressing an event or experience that occurred in the past.",
+      "form": "'-은 적이 있다' is used when the verb stem ends with a consonant, '-ㄴ 적이 있다' when it ends with a vowel. When the stem ends with 'ㄹ,' the final consonant is dropped and '-ㄴ 적이 있다' is used.",
+      "level": "A2",
+      "examples": [
+        "엔 서울 타워에 간 적이 있어요.",
+        "한국에서 불고기를 먹은 적이 있어요.",
+        "외국에서 산 적이 있어요.",
+        "이 가수의 음악을 들은 적이 있어요.",
+        "혼자 여행을 한 적이 있어요.",
+        "한국 음식을 만든 적이 있어요."
+      ]
+    },
+    {
+      "key": "g63",
+      "pattern": "동안",
+      "meaning": "Comes after a noun, indicating the time or period during which something continues.",
+      "form": "Used regardless of whether a noun ends with a consonant or not.",
+      "level": "A2",
+      "examples": [
+        "오늘 3시간 동안 운동했어요.",
+        "2시간 동안 집을 청소했어요.",
+        "5일 동안 한국을 여행했어요.",
+        "10주 동안 한국어를 공부했어요.",
+        "휴가 동안 수영을 배울 거예요.",
+        "2시간 동안 친구를 기다린 적이 있어요."
+      ]
+    },
+    {
+      "key": "g64",
+      "pattern": "-아/어 주세요",
+      "meaning": "Demander poliment à quelqu'un de faire quelque chose pour soi.",
+      "form": "Radical + -아 주세요 (voyelle ㅏ/ㅗ) | Radical + -어 주세요 (autres voyelles) | 하다 → 해 주세요",
+      "level": "A1",
+      "examples": [
+        "천천히 말해 주세요.",
+        "사진 찍어 주세요.",
+        "영수증 주세요.",
+        "택시 불러 주세요.",
+        "이 주소로 가 주세요."
+      ]
+    },
+    {
+      "key": "g65",
+      "pattern": "-(으)ㄹ 수 있어요 / 없어요",
+      "meaning": "Exprimer la capacité ou l'incapacité — 'pouvoir' ou 'ne pas pouvoir'.",
+      "form": "Radical + -(으)ㄹ 수 있어요 (capacité) | Radical + -(으)ㄹ 수 없어요 (incapacité) | Forme courte négative : 못 + verbe",
+      "level": "A1",
+      "examples": [
+        "영어 할 수 있어요?",
+        "네, 조금 할 수 있어요.",
+        "카드로 낼 수 있어요?",
+        "여기서 사진 찍을 수 있어요?",
+        "걸어서 갈 수 없어요. 너무 멀어요."
+      ]
+    },
+    {
+      "key": "g66",
+      "pattern": "-고 싶어요",
+      "meaning": "Exprimer un désir ou une envie — 'je voudrais', 'j'aimerais'.",
+      "form": "Radical verbal + -고 싶어요 (pour soi) | Pour une 3e personne : -고 싶어 해요",
+      "level": "A1",
+      "examples": [
+        "한국 음식을 먹고 싶어요.",
+        "경복궁에 가고 싶어요.",
+        "사진을 찍고 싶어요.",
+        "부산에도 가고 싶어요.",
+        "한국어를 잘 하고 싶어요."
+      ]
+    },
+    {
+      "key": "g67",
+      "pattern": "에 가다 / 에서 —",
+      "meaning": "'에 가다' indique la destination. '에서' indique le lieu de l'action.",
+      "form": "Lieu + 에 가다/오다 → direction | Lieu + 에서 + verbe → action qui s'y déroule",
+      "level": "A1",
+      "examples": [
+        "지하철역에 가요.",
+        "식당에서 밥을 먹어요.",
+        "공항에서 택시를 타요.",
+        "시장에서 쇼핑해요.",
+        "호텔에서 쉬어요."
+      ]
+    },
+    {
+      "key": "g68",
+      "pattern": "얼마나 걸려요?",
+      "meaning": "Demander la durée d'un trajet — 'Combien de temps ça prend ?'",
+      "form": "여기서 + lieu + 까지 + 얼마나 걸려요? | Réponse : 교통수단 + 로 + durée + 걸려요",
+      "level": "A1",
+      "examples": [
+        "여기서 공항까지 얼마나 걸려요?",
+        "지하철로 삼십 분 걸려요.",
+        "버스로 한 시간 걸려요.",
+        "택시로 십 분 걸려요.",
+        "걸어서 오 분 걸려요."
+      ]
+    },
+    {
+      "key": "g69",
+      "pattern": "-았/었어요 (passé)",
+      "meaning": "Exprimer une action ou un état passé — équivalent du passé composé.",
+      "form": "Voyelle finale ㅏ ou ㅗ → -았어요 | Autres voyelles → -었어요 | 하다 → 했어요",
+      "level": "A1",
+      "examples": [
+        "어제 경복궁에 갔어요.",
+        "불고기를 먹었어요. 맛있었어요.",
+        "지하철을 탔어요.",
+        "호텔에서 쉬었어요.",
+        "사진을 많이 찍었어요."
+      ]
+    },
+    {
+      "key": "g70",
+      "pattern": "-아/어도 돼요?",
+      "meaning": "Demander ou donner la permission — « est-ce que je peux… ? », « c'est permis ».",
+      "form": "Radical en ㅏ/ㅗ → -아도 돼요 | Autres voyelles → -어도 돼요 | 하다 → 해도 돼요",
+      "level": "A1",
+      "examples": [
+        "사진 찍어도 돼요?",
+        "여기 앉아도 돼요?",
+        "입어 봐도 돼요?",
+        "길 좀 물어봐도 돼요?"
+      ]
+    }
+  ]
+}

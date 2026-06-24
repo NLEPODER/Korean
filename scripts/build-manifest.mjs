@@ -13,7 +13,7 @@ const dir = join(root, 'manuals');
 const MANIFEST = 'manifest.json';
 
 const files = (await readdir(dir))
-  .filter(f => f.endsWith('.json') && f !== MANIFEST)
+  .filter(f => f.endsWith('.json') && f !== MANIFEST && f !== 'grammar.json')
   .sort();
 
 const manuals = [];
