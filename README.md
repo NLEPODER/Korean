@@ -4,7 +4,7 @@ PWA (application web installable, hors-ligne) pour réviser le vocabulaire et la
 grammaire de la méthode **Sejong Korean**. Flashcards à répétition espacée (SM-2),
 quiz, texte à trous, et parcours du vocabulaire — interface en français.
 
-➡️ **En ligne :** https://nicolaslepoder.github.io/Korean/
+➡️ **En ligne :** https://nlepoder.github.io/Korean/
 
 ## Comment ça marche
 
