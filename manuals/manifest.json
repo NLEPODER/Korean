@@ -1,0 +1,32 @@
+{
+  "generated": "2026-06-24T08:58:23.327Z",
+  "manuals": [
+    {
+      "file": "sejong_korean_1A_data.json",
+      "level": "1A",
+      "name": "1A",
+      "source": "Sejong Korean 1A — Vocabulary & Grammar Book (세종한국어 어휘·표현과 문법 1A)",
+      "lessons": 10,
+      "vocab": 408,
+      "grammar": 20
+    },
+    {
+      "file": "sejong_korean_1B_data.json",
+      "level": "1B",
+      "name": "1B",
+      "source": "Sejong Korean 1B — Vocabulary & Grammar Book",
+      "lessons": 12,
+      "vocab": 285,
+      "grammar": 24
+    },
+    {
+      "file": "sejong_korean_2A_data.json",
+      "level": "2A",
+      "name": "2A",
+      "source": "Sejong Korean 2A — Vocabulary & Grammar Book",
+      "lessons": 12,
+      "vocab": 224,
+      "grammar": 24
+    }
+  ]
+}

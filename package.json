@@ -1,0 +1,11 @@
+{
+  "name": "sejong-korean-revision",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "PWA de révision de vocabulaire et grammaire coréens (méthode Sejong).",
+  "scripts": {
+    "manifest": "node scripts/build-manifest.mjs",
+    "dev": "npm run manifest && npx --yes serve ."
+  }
+}
