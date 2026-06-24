@@ -415,10 +415,27 @@ function sm2(c,q){c=c?{...c}:{ef:2.5,reps:0,interval:0};
   c.ef=Math.max(1.3,c.ef+(0.1-(5-q)*(0.08+(5-q)*0.02)));c.due=Date.now()+c.interval*86400000;return c;}
 function poolWithSrs(){return selectedVocab().map(it=>{const id=cardId(it);return{...it,cardId:id,srs:SRS[id]};});}
 
-const state={view:'home',activeVols:new Set(LIB.map(v=>v._id)),lessons:new Set(),flashCfg:{size:20,mode:'srs',favOnly:false},libOpen:false,lessonsOpen:false};
+/* sélection persistée entre les sessions (volumes / leçons / config flashcards) */
+const SEL_KEY='sejong-sel-v1';
+const SAVED_SEL=lsGet(SEL_KEY,null);
+const state={view:'home',
+  activeVols:new Set(SAVED_SEL&&Array.isArray(SAVED_SEL.activeVols)?SAVED_SEL.activeVols:LIB.map(v=>v._id)),
+  lessons:new Set(SAVED_SEL&&Array.isArray(SAVED_SEL.lessons)?SAVED_SEL.lessons:[]),
+  flashCfg:Object.assign({size:20,mode:'srs',favOnly:false},SAVED_SEL&&SAVED_SEL.flashCfg),
+  libOpen:false,lessonsOpen:false};
 const lessonKey=(volId,lid)=>volId+'#'+lid;
+function saveSel(){lsSet(SEL_KEY,{activeVols:[...state.activeVols],lessons:[...state.lessons],flashCfg:state.flashCfg});}
 function resetLessons(){state.lessons=new Set();LIB.forEach(v=>{if(state.activeVols.has(v._id))v.lessons.forEach(l=>state.lessons.add(lessonKey(v._id,l.id)));});}
-resetLessons();
+/* restaure la sélection en retirant les volumes/leçons disparus et en activant les nouveaux */
+function reconcileSelection(addedIds){
+  const valid=new Set();LIB.forEach(v=>v.lessons.forEach(l=>valid.add(lessonKey(v._id,l.id))));
+  [...state.activeVols].forEach(id=>{if(!LIB.some(v=>v._id===id))state.activeVols.delete(id);});
+  [...state.lessons].forEach(k=>{if(!valid.has(k))state.lessons.delete(k);});
+  (addedIds||[]).forEach(id=>{const v=LIB.find(x=>x._id===id);if(v){state.activeVols.add(id);v.lessons.forEach(l=>state.lessons.add(lessonKey(id,l.id)));}});
+  if(state.activeVols.size===0){LIB.forEach(v=>state.activeVols.add(v._id));resetLessons();}
+  saveSel();
+}
+if(SAVED_SEL)reconcileSelection();else resetLessons();
 
 /* ---------- import + validate ---------- */
 function validate(obj){
@@ -477,9 +494,7 @@ async function runSync(manual){
   const r=await syncManuals();
   SYNC.status=r.ok?'ok':'err';SYNC.generated=r.generated||SYNC.generated;
   if(r.ok){
-    r.addedIds.forEach(id=>state.activeVols.add(id));
-    if(state.activeVols.size===0)LIB.forEach(v=>state.activeVols.add(v._id));
-    resetLessons();
+    reconcileSelection(r.addedIds);
     if(manual){
       if(r.added||r.updated)toast(`Manuels à jour · ${r.added} ajouté(s), ${r.updated} mis à jour`);
       else toast('Déjà à jour · '+r.total+' manuel(s)');
@@ -627,20 +642,20 @@ function renderHome(){
     const toggle=()=>{const id=el.dataset.vol;
       if(state.activeVols.has(id)){state.activeVols.delete(id);LIB.find(v=>v._id===id).lessons.forEach(l=>state.lessons.delete(lessonKey(id,l.id)));}
       else{state.activeVols.add(id);LIB.find(v=>v._id===id).lessons.forEach(l=>state.lessons.add(lessonKey(id,l.id)));}
-      render();};
+      saveSel();render();};
     el.querySelector('.tick').onclick=toggle;el.querySelector('.meta').onclick=toggle;
   });
   $app.querySelectorAll('[data-del]').forEach(b=>b.onclick=ev=>{ev.stopPropagation();
     const id=b.dataset.del,v=LIB.find(x=>x._id===id);
     if(!confirm('Supprimer « '+v._name+' » de la bibliothèque ?'))return;
-    LIB=LIB.filter(x=>x._id!==id);state.activeVols.delete(id);saveLib();resetLessons();render();});
+    LIB=LIB.filter(x=>x._id!==id);state.activeVols.delete(id);saveLib();reconcileSelection();render();});
   const ta=$app.querySelector('#toggleAll');if(ta)ta.onclick=()=>{
     const keys=[];av.forEach(v=>v.lessons.forEach(l=>keys.push(lessonKey(v._id,l.id))));
     const allOn=keys.every(k=>state.lessons.has(k));
     if(allOn)keys.forEach((k,i)=>{if(i>0)state.lessons.delete(k);});else keys.forEach(k=>state.lessons.add(k));
-    render();};
+    saveSel();render();};
   $app.querySelectorAll('[data-lk]').forEach(b=>b.onclick=()=>{const k=b.dataset.lk;
-    state.lessons.has(k)?state.lessons.delete(k):state.lessons.add(k);if(state.lessons.size===0)state.lessons.add(k);render();});
+    state.lessons.has(k)?state.lessons.delete(k):state.lessons.add(k);if(state.lessons.size===0)state.lessons.add(k);saveSel();render();});
   $app.querySelectorAll('[data-go]').forEach(b=>{if(!b.hasAttribute('disabled'))b.onclick=()=>{state.view=b.dataset.go;render();};});
 }
 
@@ -684,9 +699,9 @@ function renderFlashSetup(){
       <button class="reset-link" id="reset">Réinitialiser la progression de cette sélection</button>
     </div>`;
   wireBack();
-  $app.querySelectorAll('[data-size]').forEach(b=>b.onclick=()=>{state.flashCfg.size=b.dataset.size==='all'?'all':+b.dataset.size;renderFlashSetup();});
-  $app.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{state.flashCfg.mode=b.dataset.mode;renderFlashSetup();});
-  $app.querySelectorAll('[data-fav]').forEach(b=>b.onclick=()=>{state.flashCfg.favOnly=b.dataset.fav==='1';renderFlashSetup();});
+  $app.querySelectorAll('[data-size]').forEach(b=>b.onclick=()=>{state.flashCfg.size=b.dataset.size==='all'?'all':+b.dataset.size;saveSel();renderFlashSetup();});
+  $app.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{state.flashCfg.mode=b.dataset.mode;saveSel();renderFlashSetup();});
+  $app.querySelectorAll('[data-fav]').forEach(b=>b.onclick=()=>{state.flashCfg.favOnly=b.dataset.fav==='1';saveSel();renderFlashSetup();});
   $app.querySelector('#start').onclick=startFlash;
   $app.querySelector('#reset').onclick=()=>{if(!confirm('Effacer la progression d’apprentissage des cartes sélectionnées ?'))return;poolWithSrs().forEach(p=>delete SRS[p.cardId]);saveSRS();renderFlashSetup();};
 }
