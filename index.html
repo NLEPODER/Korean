@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0c4f2c">
+<meta name="theme-color" content="#f6f6f9">
 <title>한국어 복습 · Révision</title>
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%231b9c54'/%3E%3Cpath d='M90 44 L132 120 H48 Z' fill='white'/%3E%3Ccircle cx='90' cy='132' r='13' fill='white'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="복습">
@@ -68,6 +68,12 @@
   .panel-label{font-size:11.5px;font-weight:800;color:var(--faint);letter-spacing:.1em;text-transform:uppercase}
   .imp-btn{font-size:13px;font-weight:700;color:var(--green-deep);background:var(--green-soft);padding:8px 14px;border-radius:999px;display:flex;align-items:center;gap:5px}
   .imp-btn:active{transform:scale(.95)}
+  .lib-row{width:100%;background:none;border:none;cursor:pointer}
+  .lib-row:active{opacity:.6}
+  .lib-meta{color:var(--green);margin-left:6px}
+  .lib-chev{color:var(--faint);display:flex;transition:transform .2s ease}
+  .lib-chev.open{transform:rotate(90deg)}
+  .lib-actions{display:flex;justify-content:flex-end;padding:12px 20px 0}
 
   /* ---- library ---- */
   .lib{padding:0 20px;display:flex;flex-direction:column;gap:10px}
@@ -301,7 +307,7 @@ function sm2(c,q){c=c?{...c}:{ef:2.5,reps:0,interval:0};
   c.ef=Math.max(1.3,c.ef+(0.1-(5-q)*(0.08+(5-q)*0.02)));c.due=Date.now()+c.interval*86400000;return c;}
 function poolWithSrs(){return selectedVocab().map(it=>{const id=cardId(it);return{...it,cardId:id,srs:SRS[id]};});}
 
-const state={view:'home',activeVols:new Set(LIB.map(v=>v._id)),lessons:new Set(),flashCfg:{size:20,mode:'srs'}};
+const state={view:'home',activeVols:new Set(LIB.map(v=>v._id)),lessons:new Set(),flashCfg:{size:20,mode:'srs'},libOpen:false};
 const lessonKey=(volId,lid)=>volId+'#'+lid;
 function resetLessons(){state.lessons=new Set();LIB.forEach(v=>{if(state.activeVols.has(v._id))v.lessons.forEach(l=>state.lessons.add(lessonKey(v._id,l.id)));});}
 resetLessons();
@@ -431,13 +437,16 @@ function renderHome(){
 
   const syncing=SYNC.status==='syncing';
   const syncLabel=syncing?'Synchronisation…':SYNC.generated?'Manuels à jour · '+new Date(SYNC.generated).toLocaleDateString('fr-FR',{day:'numeric',month:'short'}):'';
+  const showLib=state.libOpen||!LIB.length;
+  const libSection=showLib?`${lib}${LIB.length?`<div class="lib-actions"><button class="imp-btn ${syncing?'busy':''}" id="sync"><span class="${syncing?'spin':''}">${I.refresh}</span> ${syncing?'…':'Rafraîchir'}</button></div>`:''}${syncLabel?`<div class="sync-note">${syncLabel}</div>`:''}`:'';
   $app.innerHTML=`
-    <div class="home-hero"><div class="eyebrow">Révision de coréen</div><h2 class="kr">한국어</h2><p>Vocabulaire &amp; grammaire · méthode Sejong</p></div>
+    <div class="home-hero"><div class="eyebrow">Révision de coréen</div><h2 class="kr">한국어</h2></div>
     ${STORAGE_OK?'':'<div class="banner">Aperçu : le stockage est désactivé ici, ta progression ne sera pas conservée. Ouvre l’appli depuis son URL pour qu’elle reste enregistrée.</div>'}
-    <div class="panel-row"><span class="panel-label">Bibliothèque</span><button class="imp-btn ${syncing?'busy':''}" id="sync"><span class="${syncing?'spin':''}">${I.refresh}</span> ${syncing?'…':'Rafraîchir'}</button></div>
-    ${lib}${syncLabel?`<div class="sync-note">${syncLabel}</div>`:''}${lessonPanel}${modes}
+    <button class="panel-row lib-row" id="libToggle"><span class="panel-label">Bibliothèque${LIB.length?` <span class="lib-meta">${LIB.length} volume${LIB.length>1?'s':''}</span>`:''}</span><span class="lib-chev ${state.libOpen?'open':''}">${I.chev}</span></button>
+    ${libSection}${lessonPanel}${modes}
     <div class="foot">Hors-ligne · ajoute à l’écran d’accueil</div>`;
 
+  const lt=$app.querySelector('#libToggle');if(lt)lt.onclick=()=>{state.libOpen=!state.libOpen;render();};
   const sync=$app.querySelector('#sync');if(sync)sync.onclick=()=>runSync(true);
   const es=$app.querySelector('#emptySync');if(es)es.onclick=()=>runSync(true);
   $app.querySelectorAll('[data-vol]').forEach(el=>{

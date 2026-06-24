@@ -1,13 +1,13 @@
 {
-  "name": "세종 1A · Révision coréen",
-  "short_name": "세종 1A",
-  "description": "Révision du vocabulaire et de la grammaire — Sejong Korean 1A",
+  "name": "한국어 · Révision coréen",
+  "short_name": "한국어",
+  "description": "Révision du vocabulaire et de la grammaire coréens — méthode Sejong",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#eaeee8",
-  "theme_color": "#0d5a32",
+  "background_color": "#f6f6f9",
+  "theme_color": "#f6f6f9",
   "lang": "fr",
   "icons": [
     {
