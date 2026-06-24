@@ -106,9 +106,9 @@
 
   /* ---- modes ---- */
   .modes{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 20px 8px;margin-top:4px}
-  .mode{background:var(--card);border-radius:var(--r-lg);padding:18px 16px 16px;text-align:left;box-shadow:var(--sh-sm);min-height:128px;display:flex;flex-direction:column;transition:transform .12s ease,box-shadow .2s ease}
+  .mode{background:var(--card);border-radius:var(--r-lg);padding:18px 18px 16px;text-align:left;box-shadow:var(--sh-sm);min-height:120px;display:flex;flex-direction:column;justify-content:center;transition:transform .12s ease,box-shadow .2s ease}
   .mode:active{transform:translateY(2px);box-shadow:var(--sh-sm)}
-  .mode .ic{width:42px;height:42px;border-radius:13px;background:var(--green-soft);color:var(--green-deep);display:grid;place-items:center;margin-bottom:auto}
+  .mode .ic{width:44px;height:44px;border-radius:14px;background:var(--green-soft);color:var(--green-deep);display:grid;place-items:center}
   .mode .nm{font-weight:750;font-size:15.5px;margin-top:14px;letter-spacing:-.01em}
   .mode .ds{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.35}
   .mode[disabled]{opacity:.4}
@@ -179,19 +179,20 @@
   .browse{padding:8px 20px 28px;overflow-y:auto}
   .lesson-card{background:var(--card);border-radius:var(--r);margin-bottom:11px;overflow:hidden;box-shadow:var(--sh-sm)}
   .lesson-head{display:flex;align-items:center;gap:13px;padding:15px 16px;width:100%;text-align:left}
-  .lesson-head .no{min-width:36px;height:36px;padding:0 9px;border-radius:11px;background:var(--green-soft);color:var(--green-deep);font-weight:800;display:grid;place-items:center;flex:none;font-size:13px;font-family:var(--kr)}
+  .lesson-head .no{min-width:36px;height:32px;padding:0 10px;border-radius:10px;background:var(--green-soft);color:var(--green-deep);font-weight:800;display:grid;place-items:center;flex:none;font-size:12.5px;font-family:var(--ui)}
   .lesson-head .ti{flex:1;min-width:0}
-  .lesson-head .ti .t{font-family:var(--kr);font-weight:750;font-size:15px;line-height:1.3;letter-spacing:-.01em}
-  .lesson-head .ti .m{font-size:12px;color:var(--muted);margin-top:1px}
+  .lesson-head .ti .t{display:block;font-family:var(--kr);font-weight:750;font-size:15px;line-height:1.3;letter-spacing:-.01em}
+  .lesson-head .ti .m{display:block;font-size:12px;color:var(--muted);margin-top:2px}
   .lesson-head .ar{color:var(--faint);transition:transform .2s ease;flex:none}
   .lesson-card.open .ar{transform:rotate(90deg)}
   .lesson-body{display:none;border-top:1px solid var(--line-soft)}
   .lesson-card.open .lesson-body{display:block}
-  .vrow{display:flex;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line-soft);align-items:baseline}
+  .vrow{display:flex;flex-direction:column;gap:5px;padding:13px 16px;border-bottom:1px solid var(--line-soft)}
   .vrow:last-child{border-bottom:none}
-  .vrow .k{font-family:var(--kr);font-weight:750;font-size:16px;flex:none;min-width:74px}
-  .vrow .e{color:var(--muted);font-size:13px}
-  .vrow .x{font-family:var(--kr);font-size:13px;color:var(--ink);opacity:.6;margin-left:auto;text-align:right;max-width:48%}
+  .vr-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;justify-content:space-between}
+  .vr-h .k{font-family:var(--kr);font-weight:750;font-size:16px}
+  .vr-h .e{color:var(--muted);font-size:13.5px;text-align:right}
+  .vrow .x{font-family:var(--kr);font-size:13px;color:var(--muted);line-height:1.45;border-left:2px solid var(--line);padding-left:9px}
   .gram{padding:15px 16px;background:var(--green-soft)}
   .gram h4{margin:0 0 10px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--green-deep);font-weight:800}
   .gram .gitem{margin-bottom:11px}
@@ -234,16 +235,24 @@
   .start-btn,.empty-lib .cta{box-shadow:0 5px 0 var(--green-deep),var(--sh-md)}
   .start-btn:active,.empty-lib .cta:active{transform:translateY(3px);box-shadow:0 2px 0 var(--green-deep),var(--sh-sm)}
   /* cartes de mode : rebord coloré + bulle d'icône assortie */
-  .mode{box-shadow:0 5px 0 -1px var(--shelf,#e3dbf7),var(--sh-sm)}
-  .mode:active{transform:translateY(3px);box-shadow:0 2px 0 -1px var(--shelf,#e3dbf7),var(--sh-sm)}
-  .mode[data-go="flashSetup"]{--shelf:#ffc2dd}
-  .mode[data-go="flashSetup"] .ic{background:#fce3ef;color:#c8156a}
-  .mode[data-go="quiz"]{--shelf:#ffcabf}
-  .mode[data-go="quiz"] .ic{background:#ffe4dd;color:#d6452f}
-  .mode[data-go="cloze"]{--shelf:#c6d4fb}
-  .mode[data-go="cloze"] .ic{background:#e7ecff;color:#3a5bd0}
-  .mode[data-go="browse"]{--shelf:#ffe2ab}
-  .mode[data-go="browse"] .ic{background:#fff0d4;color:#b3700a}
+  /* cartes de mode : teintées, sans bevel, icône pleine + titre coloré */
+  .mode{box-shadow:var(--sh-sm)}
+  .mode:active{transform:scale(.97);box-shadow:var(--sh-sm)}
+  .mode .ic{color:#fff;box-shadow:0 4px 10px -3px rgba(0,0,0,.25)}
+  .mode .nm{font-weight:800}
+  .mode .ds{color:rgba(28,24,34,.55)}
+  .mode[data-go="flashSetup"]{background:#fcdcec}
+  .mode[data-go="flashSetup"] .ic{background:#e91e74}
+  .mode[data-go="flashSetup"] .nm{color:#a3115a}
+  .mode[data-go="quiz"]{background:#ffe1d6}
+  .mode[data-go="quiz"] .ic{background:#f5533a}
+  .mode[data-go="quiz"] .nm{color:#b3331d}
+  .mode[data-go="cloze"]{background:#e4eaff}
+  .mode[data-go="cloze"] .ic{background:#4361ee}
+  .mode[data-go="cloze"] .nm{color:#2b3fb0}
+  .mode[data-go="browse"]{background:#ffeecb}
+  .mode[data-go="browse"] .ic{background:#f08c00}
+  .mode[data-go="browse"] .nm{color:#9a6306}
   /* sélection de leçon plus punchy */
   .chip.on{transform:translateY(-1px)}
   .chip:active{transform:scale(.92)}
@@ -423,7 +432,7 @@ function renderHome(){
   const syncing=SYNC.status==='syncing';
   const syncLabel=syncing?'Synchronisation…':SYNC.generated?'Manuels à jour · '+new Date(SYNC.generated).toLocaleDateString('fr-FR',{day:'numeric',month:'short'}):'';
   $app.innerHTML=`
-    <div class="home-hero"><div class="eyebrow">한국어 복습</div><h2 class="kr">복습</h2><p>Révise ton vocabulaire coréen, hors-ligne.</p></div>
+    <div class="home-hero"><div class="eyebrow">Révision de coréen</div><h2 class="kr">한국어</h2><p>Vocabulaire &amp; grammaire · méthode Sejong</p></div>
     ${STORAGE_OK?'':'<div class="banner">Aperçu : le stockage est désactivé ici, ta progression ne sera pas conservée. Ouvre l’appli depuis son URL pour qu’elle reste enregistrée.</div>'}
     <div class="panel-row"><span class="panel-label">Bibliothèque</span><button class="imp-btn ${syncing?'busy':''}" id="sync"><span class="${syncing?'spin':''}">${I.refresh}</span> ${syncing?'…':'Rafraîchir'}</button></div>
     ${lib}${syncLabel?`<div class="sync-note">${syncLabel}</div>`:''}${lessonPanel}${modes}
@@ -607,7 +616,7 @@ function renderBrowse(){
       <span class="ti"><span class="t kr">${l.title_kr||('Leçon '+l.id)}</span><span class="m">${l.vocabulary.length} mots · ${gram.length} grammaire</span></span>
       <span class="ar">${I.chev}</span></button>
       <div class="lesson-body">
-        ${l.vocabulary.map(it=>`<div class="vrow"><span class="k">${it.kr}</span><span class="e">${it.en}</span>${it.example?`<span class="x">${it.example}</span>`:''}</div>`).join('')}
+        ${l.vocabulary.map(it=>`<div class="vrow"><div class="vr-h"><span class="k">${it.kr}</span><span class="e">${it.en}</span></div>${it.example?`<div class="x">${it.example}</div>`:''}</div>`).join('')}
         ${gram.length?`<div class="gram"><h4>Grammaire</h4>${gram.map(g=>`<div class="gitem"><div class="gp">${g.pattern}</div><div class="gm">${g.meaning_en||''}</div></div>`).join('')}</div>`:''}
       </div></div>`;
   }));
