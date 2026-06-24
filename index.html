@@ -372,7 +372,7 @@ function selectedVocab(){
   const out=[];
   LIB.forEach(v=>{if(!state.activeVols.has(v._id))return;
     v.lessons.forEach(l=>{if(!state.lessons.has(lessonKey(v._id,l.id)))return;
-      l.vocabulary.forEach(it=>out.push({...it,volId:v._id,level:v._name,lessonId:l.id,lessonTitle:l.title_kr||''}));});});
+      l.vocabulary.forEach(it=>out.push({...it,volId:v._id,level:v._name,lessonId:l.id,lessonTitle:l.title_kr||'',lessonLabel:l.label||''}));});});
   return out;
 }
 function clozeParts(item){
@@ -407,7 +407,8 @@ function renderHome(){
   if(av.length){
     const chips=[];
     av.forEach(v=>v.lessons.forEach(l=>{const k=lessonKey(v._id,l.id),on=state.lessons.has(k);
-      chips.push(`<button class="chip ${on?'on':''}" data-lk="${k}"><b>${multiVol()?v._name+'·'+l.id:l.id}</b><span class="nm kr">${lessonName(l)}</span></button>`);}));
+      const badge=l.label?l.label:(multiVol()?v._name+'·'+l.id:l.id);
+      chips.push(`<button class="chip ${on?'on':''}" data-lk="${k}"><b>${badge}</b><span class="nm kr">${lessonName(l)}</span></button>`);}));
     const allOn=chips.every(c=>c.includes('chip on'));
     lessonPanel=`<div class="panel-row"><span class="panel-label">Leçons · ${vocabN} mots</span><button class="chip-all" id="toggleAll">${allOn?'Tout désél.':'Tout sél.'}</button></div><div class="chips">${chips.join('')}</div>`;
   }
@@ -454,7 +455,7 @@ function renderHome(){
 const topbar=(t,s)=>`<div class="topbar"><button class="back" id="back">${I.back}</button><div><h1>${t}</h1><div class="sub">${s}</div></div></div>`;
 function wireBack(){const b=$app.querySelector('#back');if(b)b.onclick=()=>{state.view='home';render();};}
 const lessonName=l=>{const t=(l.title_kr||'').trim();return t||('Leçon '+l.id);};
-const tag=item=>{const nm=(item.lessonTitle||'').trim();const short=nm?nm.split(/\s[—–-]\s/)[0].trim():('Leçon '+item.lessonId);return multiVol()?item.level+' · '+short:short;};
+const tag=item=>{const lbl=(item.lessonLabel||'').trim();const nm=(item.lessonTitle||'').trim();const base=lbl||(nm?nm.split(/\s[—–-]\s/)[0].trim():('Leçon '+item.lessonId));return multiVol()?item.level+' · '+base:base;};
 
 /* ---------- flashcards : setup + répétition espacée (SM-2) ---------- */
 function buildFlashDeck(size,mode){
@@ -602,7 +603,7 @@ function renderBrowse(){
   vols.forEach(v=>v.lessons.forEach(l=>{
     const gram=(v.grammar||[]).filter(g=>g.lesson===l.id);
     cards+=`<div class="lesson-card"><button class="lesson-head">
-      <span class="no">${multiVol()?v._name+'·'+l.id:l.id}</span>
+      <span class="no">${l.label?l.label:(multiVol()?v._name+'·'+l.id:l.id)}</span>
       <span class="ti"><span class="t kr">${l.title_kr||('Leçon '+l.id)}</span><span class="m">${l.vocabulary.length} mots · ${gram.length} grammaire</span></span>
       <span class="ar">${I.chev}</span></button>
       <div class="lesson-body">
