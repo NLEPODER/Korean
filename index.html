@@ -262,6 +262,27 @@
   /* sélection de leçon plus punchy */
   .chip.on{transform:translateY(-1px)}
   .chip:active{transform:scale(.92)}
+
+  /* ===== grammaire : liens + feuille ===== */
+  .gp-links{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:6px}
+  .gp-link{display:inline-flex;align-items:center;gap:5px;font-family:var(--kr);font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);padding:6px 11px;border-radius:999px}
+  .gp-link svg{width:13px;height:13px;opacity:.9}
+  .gp-link:active{transform:scale(.94)}
+  .gp-link.light{color:var(--green-deep);background:var(--green-soft);border-color:transparent}
+  .sheet-wrap{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-end;justify-content:center}
+  .sheet-bg{position:absolute;inset:0;background:rgba(20,15,30,.45);opacity:0;transition:opacity .25s ease}
+  .sheet-wrap.show .sheet-bg{opacity:1}
+  .sheet{position:relative;width:100%;max-width:460px;background:var(--card);border-radius:26px 26px 0 0;padding:10px 22px calc(24px + env(safe-area-inset-bottom));box-shadow:0 -12px 44px -12px rgba(40,20,60,.4);transform:translateY(101%);transition:transform .32s cubic-bezier(.2,.75,.2,1);max-height:82vh;overflow-y:auto}
+  .sheet-wrap.show .sheet{transform:translateY(0)}
+  .sheet-grip{width:42px;height:4px;border-radius:99px;background:var(--line);margin:6px auto 16px}
+  .gp-pat{font-family:var(--kr);font-size:26px;font-weight:800;color:var(--green-deep);letter-spacing:-.01em;line-height:1.15}
+  .gp-mean{font-size:14.5px;color:var(--ink);margin-top:9px;line-height:1.5}
+  .gp-sec{margin-top:18px}
+  .gp-h{font-size:11px;font-weight:800;color:var(--faint);letter-spacing:.1em;text-transform:uppercase;margin-bottom:9px}
+  .gp-form{font-size:13.5px;color:var(--muted);line-height:1.7}
+  .gp-ex{font-family:var(--kr);font-size:15px;padding:10px 13px;background:var(--green-soft);color:var(--ink);border-radius:13px;margin-bottom:7px}
+  .sheet-close{margin-top:22px;width:100%;padding:15px;border-radius:14px;background:var(--green-soft);color:var(--green-deep);font-weight:750;font-size:15px}
+  .sheet-close:active{transform:scale(.99)}
 </style>
 </head>
 <body>
@@ -387,8 +408,31 @@ function selectedVocab(){
   const out=[];
   LIB.forEach(v=>{if(!state.activeVols.has(v._id))return;
     v.lessons.forEach(l=>{if(!state.lessons.has(lessonKey(v._id,l.id)))return;
-      l.vocabulary.forEach(it=>out.push({...it,volId:v._id,level:v._name,lessonId:l.id,lessonTitle:l.title_kr||'',lessonLabel:l.label||''}));});});
+      l.vocabulary.forEach(it=>out.push({...it,volId:v._id,level:v._name,lessonId:l.id,lessonTitle:l.title_kr||'',lessonLabel:l.label||'',gp:it.gp||null}));});});
   return out;
+}
+
+/* ---------- grammaire liée : règle d'une expression + feuille ---------- */
+function grammarById(volId,gid){const v=LIB.find(x=>x._id===volId);if(!v||!Array.isArray(v.grammar))return null;return v.grammar.find(g=>g.id===gid)||null;}
+function itemGrammar(item){return (item.gp||[]).map(id=>grammarById(item.volId,id)).filter(Boolean);}
+function gpLinks(item,light){const gs=itemGrammar(item);if(!gs.length)return'';
+  return `<div class="gp-links">${gs.map(g=>`<button class="gp-link${light?' light':''}" data-gp="${g.id}" data-vol="${item.volId}">${I.book}<span class="kr">${g.pattern}</span></button>`).join('')}</div>`;}
+function wireGpLinks(scope){(scope||$app).querySelectorAll('[data-gp]').forEach(b=>b.onclick=ev=>{ev.stopPropagation();const g=grammarById(b.dataset.vol,+b.dataset.gp);if(g)openGrammar(g);});}
+function openGrammar(g){
+  const ex=(g.examples||[]).slice(0,4);
+  const el=document.createElement('div');el.className='sheet-wrap';
+  el.innerHTML=`<div class="sheet-bg"></div><div class="sheet">
+    <div class="sheet-grip"></div>
+    <div class="gp-pat">${g.pattern}</div>
+    ${g.meaning_en?`<div class="gp-mean">${g.meaning_en}</div>`:''}
+    ${g.form_en?`<div class="gp-sec"><div class="gp-h">Formation</div><div class="gp-form">${g.form_en}</div></div>`:''}
+    ${ex.length?`<div class="gp-sec"><div class="gp-h">Exemples</div>${ex.map(e=>`<div class="gp-ex">${e}</div>`).join('')}</div>`:''}
+    <button class="sheet-close">Fermer</button>
+  </div>`;
+  document.body.appendChild(el);
+  requestAnimationFrame(()=>el.classList.add('show'));
+  const close=()=>{el.classList.remove('show');setTimeout(()=>el.remove(),300);};
+  el.querySelector('.sheet-bg').onclick=close;el.querySelector('.sheet-close').onclick=close;
 }
 function clozeParts(item){
   if(!item.example)return null;
@@ -530,12 +574,13 @@ function renderFlash(){
     <div class="stage">
       <div class="flip ${fFlip?'flipped':''}" id="flip"><div class="flip-inner">
         <div class="face front"><span class="tag">${frontKr?'한국어':'English'}</span><div class="face-scroll"><div class="lead">${frontKr?'Que veut dire…':'Comment dit-on…'}</div><div class="term ${frontKr?'kr':''}">${frontKr?item.kr:item.en}</div></div></div>
-        <div class="face back"><span class="tag">${frontKr?'English':'한국어'}</span><span class="wm kr">${(item.kr.match(/[가-힣]/)||[''])[0]}</span><div class="face-scroll"><div class="term ${frontKr?'':'kr'}">${frontKr?item.en:item.kr}</div>${item.example?`<div class="ex">${item.example}</div>`:''}</div></div>
+        <div class="face back"><span class="tag">${frontKr?'English':'한국어'}</span><span class="wm kr">${(item.kr.match(/[가-힣]/)||[''])[0]}</span><div class="face-scroll"><div class="term ${frontKr?'':'kr'}">${frontKr?item.en:item.kr}</div>${item.example?`<div class="ex">${item.example}</div>`:''}${gpLinks(item)}</div></div>
       </div></div>
       ${fFlip?`<div class="judge"><button class="b3 b-again" data-g="2">Encore</button><button class="b3 b-good" data-g="4">Bien</button><button class="b3 b-easy" data-g="5">Facile</button></div>`:`<div class="hint">Touche la carte pour la retourner</div>`}
     </div>`;
   wireBack();
   $app.querySelector('#flip').onclick=()=>{fFlip=!fFlip;renderFlash();};
+  wireGpLinks();
   if(fFlip)$app.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{
     const q=+b.dataset.g; SRS[id]=sm2(SRS[id],q); saveSRS();
     if(q<3){fLapsed.add(id);fAtt[id]=(fAtt[id]||0)+1;const c=fQueue.shift();if(fAtt[id]>=3)fDone.add(id);else fQueue.splice(Math.min(5,fQueue.length),0,c);}
@@ -626,12 +671,12 @@ function renderBrowse(){
       <span class="ti"><span class="t kr">${l.title_kr||('Leçon '+l.id)}</span><span class="m">${l.vocabulary.length} mots · ${gram.length} grammaire</span></span>
       <span class="ar">${I.chev}</span></button>
       <div class="lesson-body">
-        ${l.vocabulary.map(it=>`<div class="vrow"><div class="vr-h"><span class="k">${it.kr}</span><span class="e">${it.en}</span></div>${it.example?`<div class="x">${it.example}</div>`:''}</div>`).join('')}
+        ${l.vocabulary.map(it=>`<div class="vrow"><div class="vr-h"><span class="k">${it.kr}</span><span class="e">${it.en}</span></div>${it.example?`<div class="x">${it.example}</div>`:''}${gpLinks({volId:v._id,gp:it.gp},true)}</div>`).join('')}
         ${gram.length?`<div class="gram"><h4>Grammaire</h4>${gram.map(g=>`<div class="gitem"><div class="gp">${g.pattern}</div><div class="gm">${g.meaning_en||''}</div></div>`).join('')}</div>`:''}
       </div></div>`;
   }));
   $app.innerHTML=topbar('Parcourir',vols.length+' volume'+(vols.length>1?'s':''))+`<div class="browse">${cards||'<div class="empty">Aucun volume sélectionné.</div>'}</div>`;
-  wireBack();$app.querySelectorAll('.lesson-card').forEach(c=>c.querySelector('.lesson-head').onclick=()=>c.classList.toggle('open'));
+  wireBack();wireGpLinks();$app.querySelectorAll('.lesson-card').forEach(c=>c.querySelector('.lesson-head').onclick=()=>c.classList.toggle('open'));
 }
 
 render();              // rendu immédiat depuis le cache local
