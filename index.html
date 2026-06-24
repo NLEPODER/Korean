@@ -352,7 +352,7 @@ async function syncManuals(){
     }catch(e){continue;}
     if(!validate(obj).ok)continue;
     obj._id=(obj.meta&&obj.meta.level)?String(obj.meta.level):(m.level||m.file);
-    obj._name=obj._id;obj._src='repo';
+    obj._name=(obj.meta&&obj.meta.name)?String(obj.meta.name):obj._id;obj._src='repo';
     if(!Array.isArray(obj.grammar))obj.grammar=[];
     wanted.add(obj._id);
     const i=LIB.findIndex(x=>x._id===obj._id);
@@ -422,7 +422,7 @@ function renderHome(){
   if(av.length){
     const chips=[];
     av.forEach(v=>v.lessons.forEach(l=>{const k=lessonKey(v._id,l.id),on=state.lessons.has(k);
-      const badge=l.label?l.label:(multiVol()?v._name+'·'+l.id:l.id);
+      const badge=l.label?l.label:(multiVol()?v._id+'·'+l.id:l.id);
       chips.push(`<button class="chip ${on?'on':''}" data-lk="${k}"><b>${badge}</b><span class="nm kr">${lessonName(l)}</span></button>`);}));
     const allOn=chips.every(c=>c.includes('chip on'));
     lessonPanel=`<button class="panel-row lib-row" id="lessonsToggle"><span class="panel-label">Leçons <span class="lib-meta">${vocabN} mots</span></span><span class="lib-chev ${state.lessonsOpen?'open':''}">${I.chev}</span></button>${state.lessonsOpen?`<div class="lib-actions"><button class="chip-all" id="toggleAll">${allOn?'Tout désél.':'Tout sél.'}</button></div><div class="chips">${chips.join('')}</div>`:''}`;
@@ -622,7 +622,7 @@ function renderBrowse(){
   vols.forEach(v=>v.lessons.forEach(l=>{
     const gram=(v.grammar||[]).filter(g=>g.lesson===l.id);
     cards+=`<div class="lesson-card"><button class="lesson-head">
-      <span class="no">${l.label?l.label:(multiVol()?v._name+'·'+l.id:l.id)}</span>
+      <span class="no">${l.label?l.label:(multiVol()?v._id+'·'+l.id:l.id)}</span>
       <span class="ti"><span class="t kr">${l.title_kr||('Leçon '+l.id)}</span><span class="m">${l.vocabulary.length} mots · ${gram.length} grammaire</span></span>
       <span class="ar">${I.chev}</span></button>
       <div class="lesson-body">

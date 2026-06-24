@@ -1,10 +1,10 @@
 {
-  "generated": "2026-06-24T13:35:10.308Z",
+  "generated": "2026-06-24T14:05:44.655Z",
   "manuals": [
     {
       "file": "korean_voyage_expressions.json",
       "level": "Débutant–Intermédiaire",
-      "name": "Débutant–Intermédiaire",
+      "name": "Basics",
       "source": "Manuel indépendant — Voyage & Expressions courantes",
       "lessons": 3,
       "vocab": 330,
@@ -13,7 +13,7 @@
     {
       "file": "sejong_korean_1A_data.json",
       "level": "1A",
-      "name": "1A",
+      "name": "Sejong 1A",
       "source": "Sejong Korean 1A — Vocabulary & Grammar Book (세종한국어 어휘·표현과 문법 1A)",
       "lessons": 10,
       "vocab": 408,
@@ -22,7 +22,7 @@
     {
       "file": "sejong_korean_1B_data.json",
       "level": "1B",
-      "name": "1B",
+      "name": "Sejong 1B",
       "source": "Sejong Korean 1B — Vocabulary & Grammar Book",
       "lessons": 12,
       "vocab": 285,
@@ -31,7 +31,7 @@
     {
       "file": "sejong_korean_2A_data.json",
       "level": "2A",
-      "name": "2A",
+      "name": "Sejong 2A",
       "source": "Sejong Korean 2A — Vocabulary & Grammar Book",
       "lessons": 12,
       "vocab": 224,

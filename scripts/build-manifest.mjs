@@ -34,7 +34,7 @@ for (const file of files) {
   manuals.push({
     file,
     level,
-    name: level,
+    name: obj.meta?.name ? String(obj.meta.name) : level,
     source: obj.meta?.source || level,
     lessons: lessons.length,
     vocab: lessons.reduce((s, l) => s + (l.vocabulary?.length || 0), 0),

@@ -3,6 +3,7 @@
     "source": "Sejong Korean 1B — Vocabulary & Grammar Book",
     "publisher": "국립국어원 / King Sejong Institute",
     "level": "1B",
+    "name": "Sejong 1B",
     "structure": "1부 어휘와 표현 (Vocabulary, leçons 01-12) / 2부 문법 (Grammar, 2 points par leçon) / 부록 (Index, ignoré)",
     "fields": {
       "lessons[].vocabulary[].kr": "mot coréen tel qu'imprimé",

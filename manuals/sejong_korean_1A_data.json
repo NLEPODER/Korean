@@ -3,6 +3,7 @@
     "source": "Sejong Korean 1A — Vocabulary & Grammar Book (세종한국어 어휘·표현과 문법 1A)",
     "publisher": "국립국어원 / King Sejong Institute",
     "level": "1A",
+    "name": "Sejong 1A",
     "structure": "lessons[] contient le vocabulaire par leçon ; grammar[] contient les points de grammaire avec leçon associée",
     "fields": {
       "vocabulary": ["kr (mot coréen)", "en (traduction anglaise)", "example (phrase d'exemple en coréen)"],
